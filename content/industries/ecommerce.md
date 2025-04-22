@@ -1,7 +1,7 @@
 ---
-title: "E-commerce"
+title: "E-commerce (Food Tech & Retail)"
 excerpt: "Transforming shopping experiences through personalized insights and efficient logistics."
-thumbnail: "ecommerce.jpg"
+thumbnail: "industries/ecommerce.jpg"
 relatedSkills: ["data-analytics", "machine-learning"]
 relatedProjects: ["clv-dashboard"]
 relatedBlogs: ["optimizing-customer-lifetime-value"]

@@ -33,21 +33,25 @@ export default function IndustryPage() {
       <h1 className="text-4xl font-bold mb-8">🏭 Industries</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {industries.map((industry) => (
-          <Link key={industry.slug} href={`/expertise/industry/${industry.slug}`}>
-            <div className="p-4 border rounded-xl bg-white shadow hover:shadow-md transition">
-              {industry.thumbnail && (
+          <div key={industry.slug} className="p-4 border rounded-xl bg-white shadow hover:shadow-md transition cursor-default">
+            {industry.thumbnail && (
+              <Link href={`/expertise/industry/${industry.slug}`}>
                 <Image
                   src={`/images/${industry.thumbnail}`}
                   alt={industry.title}
                   width={400}
                   height={200}
-                  className="rounded-md mb-4 object-cover h-40 w-full"
+                  className="rounded-md mb-4 object-cover h-40 w-full cursor-pointer"
                 />
-              )}
-              <h2 className="text-xl font-semibold">{industry.title}</h2>
-              <p className="text-sm text-gray-600 mt-2">{industry.excerpt}</p>
-            </div>
-          </Link>
+              </Link>
+            )}
+            <Link href={`/expertise/industry/${industry.slug}`}>
+              <h2 className="text-xl font-semibold text-blue-700 hover:underline cursor-pointer">
+                {industry.title}
+              </h2>
+            </Link>
+            <p className="text-sm text-gray-600 mt-2">{industry.excerpt}</p>
+          </div>
         ))}
       </div>
     </main>

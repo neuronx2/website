@@ -32,7 +32,7 @@ export default function BlogIndexPage() {
 
   return (
     <main className="max-w-3xl mx-auto px-6 py-16 text-gray-800">
-      <h1 className="text-4xl font-bold mb-4">📝 Blog</h1>
+      <h1 className="text-4xl font-bold mb-4">📝 Blogs</h1>
       <p className="text-lg text-gray-600 mb-10">
         Thoughts, lessons, and experiments from my journey in data, strategy, and storytelling.
       </p>

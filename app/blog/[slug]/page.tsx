@@ -32,6 +32,17 @@ async function getRelated(folder: string, slugs: string[]): Promise<RelatedItem[
   }).filter(Boolean) as RelatedItem[]
 }
 
+export async function generateStaticParams() {
+  const blogDir = path.join(process.cwd(), 'content/blogs');
+  const filenames = fs.readdirSync(blogDir);
+
+  return filenames
+    .filter(name => name.endsWith('.md'))
+    .map(name => ({
+      slug: name.replace(/\.md$/, ''),
+    }));
+}
+
 export default async function BlogPostPage({ params }: Props) {
   const slug = decodeURIComponent(params.slug)
   const filePath = path.join(process.cwd(), 'content/blogs', `${slug}.md`)

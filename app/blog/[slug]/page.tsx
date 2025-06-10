@@ -13,7 +13,7 @@ type RelatedItem = {
   excerpt: string
 }
 
-async function getRelated(folder: string, slugs: string[]): Promise<RelatedItem[]> {
+function getRelated(folder: string, slugs: string[]): RelatedItem[] {
   return slugs.map((slug) => {
     const filePath = path.join(process.cwd(), 'content', folder, `${slug}.md`)
     if (!fs.existsSync(filePath)) return null
@@ -40,7 +40,7 @@ export async function generateStaticParams() {
     }));
 }
 
-export default async function BlogPostPage({ params }: { params: { slug: string } }) {
+export default function BlogPostPage({ params }: { params: { slug: string } }) {
   const slug = decodeURIComponent(params.slug)
   const filePath = path.join(process.cwd(), 'content/blogs', `${slug}.md`)
 
@@ -48,13 +48,11 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
 
   const fileContent = fs.readFileSync(filePath, 'utf8')
   const { data, content } = matter(fileContent)
-  const processed = await remark().use(html).process(content)
+  const processed = remark().use(html).processSync(content)
 
-  const [relatedSkills, relatedIndustries, relatedProjects] = await Promise.all([
-    getRelated('skills', data.relatedSkills || []),
-    getRelated('industries', data.relatedIndustries || []),
-    getRelated('projects', data.relatedProjects || []),
-  ])
+  const relatedSkills = getRelated('skills', data.relatedSkills || [])
+  const relatedIndustries = getRelated('industries', data.relatedIndustries || [])
+  const relatedProjects = getRelated('projects', data.relatedProjects || [])
 
   return (
     <main className="max-w-3xl mx-auto py-12 px-6 text-gray-800">

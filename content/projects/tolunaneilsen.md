@@ -1,24 +1,65 @@
 ---
-title: "Customer Lifetime Value Prediction & Reporting"
-date: "2024-03-20"
-excerpt: "Dashboards to visualize predicted lifetime value and track retention KPIs."
-thumbnail: "clv-thumb.png"
-relatedSkills: ["data-analytics", "dashboarding"]
-relatedIndustries: ["ecommerce"]
-relatedBlogs: ["optimizing-customer-lifetime-value"]
+title: "Enterprise Research Delivery & Analytics Dashboard for Client Performance Monitoring"
+excerpt: "Led a multi-country research program and built a real-time dashboard to track fieldwork performance and data quality for a global client."
+thumbnail: "projects/research-analytics-tool-thumb.png"
+relatedSkills: ["ops","prod","pm","bi"]
+relatedIndustries: ["ecommerce","marketing-research"]
+relatedBlogs: [
+  "cross-departmental-data-projects",
+  "finances-at-the-center",
+  "discount-strategy-business-health",
+  "request-to-delivery-analytical-projects",
+  "cba-case-for-decisions",
+  "modern-fpa",
+  "scope-creep-good-and-bad",
+  "product-market-fit-and-ai",
+  "data-driven-expansion",
+  "data-competitor-analysis",
+  "data-and-legal",
+  "erp-readiness-checklist",
+  "rca-saving-tool",
+  "voc-to-product-development-framework",
+  "influencer-without-authority",
+  "data-new-product-development",
+  "analytics-in-ar",
+  "mmm-for-strategy",
+  "cohort-analysis-and-clv",
+  "experimentation",
+  "w-and-h-never-failing-tools",
+  "data-governance-for-startups",
+  "data-science-time-to-market",
+  "erp-and-master-data",
+  "beyond-dashboards",
+  "data-first-not-tools"
+]
+
 ---
 
 ## Project Goal
 
-To enable product and marketing teams to track and segment users by lifetime value.
+To manage and deliver a large-scale research program across multiple markets and simultaneously develop a client-facing reporting and analytics tool to track performance, ensure transparency, and reinforce trust. The dashboard provided real-time visibility into field progress, data quality, and operational KPIs.
+
+### Scope of Work
+
+- Oversaw multi-phase, multi-country quantitative data collection
+- Built a custom reporting solution with auto-refresh status updates
+- Designed metrics to monitor IR, LOI, dropout rate, data completeness, and quota health
+- Reduced manual reporting load and increased visibility for client stakeholders
 
 ### Stack
 
-- Python + Pandas for modeling
-- Tableau for dashboard delivery
-- dbt + Snowflake for pipeline
+- Excel + VBA for initial prototyping
+- Power BI for interactive dashboard development
+- R + Confirmit for data processing and QC
+- Google Sheets + SharePoint for delivery workflow
 
 ### Results
 
-- Retention up by 15%
-- $300K increase in CLV
+- Delivered a high-volume research program with ~95% quality compliance
+- Client adopted dashboard as an internal weekly field tracker
+- Reduced revision cycles and escalations
+- Enabled proactive issue identification and improved SLA adherence
+
+### Strategic Impact
+
+This project combined operational rigor with analytics enablement, positioning Toluna as more than a data vendor—rather, as a consultative, insight-driven partner. The dashboard provided transparency, improved planning confidence, and created a reusable framework for future high-visibility client engagements.

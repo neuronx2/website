@@ -2,21 +2,47 @@
 title: "Healthcare & Life Sciences"
 excerpt: "Leveraging data-driven strategies to improve patient outcomes and optimize operational efficiency."
 thumbnail: "industries/healthcare.jpg"
-relatedSkills: ["data-analytics", "machine-learning"]
-relatedProjects: ["patient-risk-model", "hospital-dashboard"]
-relatedBlogs: ["optimizing-patient-flow", "ai-in-healthcare"]
+relatedSkills: ["da","prod","pm"]
+relatedProjects: ["sampling","blueprinting","scenarioanalysis","vaccines"]
+relatedBlogs: [
+  "cross-departmental-data-projects",
+  "finances-at-the-center",
+  "discount-strategy-business-health",
+  "request-to-delivery-analytical-projects",
+  "cba-case-for-decisions",
+  "modern-fpa",
+  "scope-creep-good-and-bad",
+  "product-market-fit-and-ai",
+  "data-driven-expansion",
+  "data-competitor-analysis",
+  "data-and-legal",
+  "erp-readiness-checklist",
+  "rca-saving-tool",
+  "voc-to-product-development-framework",
+  "influencer-without-authority",
+  "data-new-product-development",
+  "analytics-in-ar",
+  "mmm-for-strategy",
+  "cohort-analysis-and-clv",
+  "experimentation",
+  "w-and-h-never-failing-tools",
+  "data-governance-for-startups",
+  "data-science-time-to-market",
+  "erp-and-master-data",
+  "beyond-dashboards",
+  "data-first-not-tools"
+]
 ---
 
 ## Overview
 
-The healthcare industry is experiencing a digital transformation powered by data. From patient records to real-time monitoring, organizations are increasingly dependent on analytics to improve outcomes.
+In healthcare and life sciences, after my graduation in Biomedical sciences. I’ve worked on Recombinant DNA vaccines for Prostate Cancer with **Professor G.P.Talwar** (offten ref. to as Father of Biotechnology in India for his work in field of Immunology). Spending long hours in lab running experiments and analysing results. Apart from this, I have also done multiple internships for understanding the Medicine manufacturing process and machine functions at **Panecea Biotech**.
 
-### Key Opportunities
 
-- Predictive modeling for readmission risks
-- Optimizing hospital workflows using simulation
-- Integrating wearables data for chronic condition management
+### Key Focus Areas
 
-> “Data saves lives — we just need to use it right.”
+- Experimentation & Statistical Inference
+- PCR & Blotting
+- Medical Lab technilogies
+- Vaccines and Immunology
 
----

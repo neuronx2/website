@@ -1,22 +1,55 @@
 ---
 title: "Boutique Consultancy"
-excerpt: "Transforming shopping experiences through personalized insights and efficient logistics."
+excerpt: "Data-driven strategic consulting across analytics, digital marketing, and customer economics, helping businesses unlock growth through actionable insights..."
 thumbnail: "industries/boutique-consultancy.jpg"
-relatedSkills: ["data-analytics", "machine-learning"]
-relatedProjects: ["clv-dashboard"]
-relatedBlogs: ["optimizing-customer-lifetime-value"]
+relatedSkills: ["da","ce","pm","bi"]
+relatedProjects: ["bitoolselection","discountanalysis","abtesting","competitoranalysis",
+  "expansionstrategy","conversionattribution","digitalization"]
+relatedBlogs: [
+  "cross-departmental-data-projects",
+  "finances-at-the-center",
+  "discount-strategy-business-health",
+  "request-to-delivery-analytical-projects",
+  "cba-case-for-decisions",
+  "modern-fpa",
+  "scope-creep-good-and-bad",
+  "product-market-fit-and-ai",
+  "data-driven-expansion",
+  "data-competitor-analysis",
+  "data-and-legal",
+  "erp-readiness-checklist",
+  "rca-saving-tool",
+  "voc-to-product-development-framework",
+  "influencer-without-authority",
+  "data-new-product-development",
+  "analytics-in-ar",
+  "mmm-for-strategy",
+  "cohort-analysis-and-clv",
+  "experimentation",
+  "w-and-h-never-failing-tools",
+  "data-governance-for-startups",
+  "data-science-time-to-market",
+  "erp-and-master-data",
+  "beyond-dashboards",
+  "data-first-not-tools"
+]
 ---
 
-## E-commerce Landscape
+## Small Consultancy companies: Niche & High Impact
 
-The digital shopping revolution has reshaped how consumers browse, purchase, and interact with brands.
+**Ommax GmbH:** I specialized in bridging advanced analytics, digital marketing, and customer economics to accelerate business growth. Working closely with fast-scaling companies and private equity firms. 
+
+Apart from Ommax Gmbh, I have worked on individual projects and provided hands-on support in customer segmentation,  digital channel optimization, and data-driven financial modeling. The focus remained on making data actionable — translating insights into tangible improvements across marketing efficiency, customer lifetime value, and operational KPIs. By combining strategic advisory with a strong grasp of digital ecosystems, I helped SME's build resilient and scalable digital strategies tailored to their target markets.
 
 ### Key Focus Areas
 
-- Personalized recommendations
-- Inventory and fulfillment optimization
-- Real-time customer segmentation
-
-> "Analytics in e-commerce is like the compass guiding product, marketing, and logistics together."
+- Customer Segmentation & Lifetime Value Analysis
+- Web Analytics & Conversion Rate Optimization
+- Commercial Due Diligence Support
+- Customer Journey Mapping & Experience Optimization
+- Digital Channel Audits and Strategic Recommendations
+- Pricing Strategy & Revenue Optimization
+- Financial Modeling for Go-to-Market Strategies
+- Strategic Advisory for Growth and Turnaround Projects
 
 ---

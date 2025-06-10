@@ -1,6 +1,5 @@
 ---
 title: "Scope Creep Isn’t Always Bad — Sometimes It’s How Innovation Happens"
-date: "2024-04-15"
 excerpt: "How to turn shifting requirements into opportunities for creative breakthroughs."
 thumbnail: "blogs/23.jpg"
 relatedSkills: ["data-analytics", "machine-learning"]

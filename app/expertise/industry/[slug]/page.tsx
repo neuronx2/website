@@ -21,6 +21,21 @@ export default async function IndustryDetailPage({ params }: Props) {
   const { data, content } = matter(fileContent)
   const processed = await remark().use(html).process(content)
 
+  // Helper to get titles from .md files for related items
+  const getTitles = (dir: string, slugs: string[]) => {
+    return slugs.map((slug) => {
+      const filePath = path.join(process.cwd(), `content/${dir}`, `${slug}.md`);
+      if (!fs.existsSync(filePath)) return { slug, title: slug };
+      const file = fs.readFileSync(filePath, 'utf8');
+      const { data } = matter(file);
+      return { slug, title: data.title || slug };
+    });
+  };
+
+  const skills = data.relatedSkills ? getTitles('skills', data.relatedSkills) : [];
+  const projects = data.relatedProjects ? getTitles('projects', data.relatedProjects) : [];
+  const blogs = data.relatedBlogs ? getTitles('blogs', data.relatedBlogs) : [];
+
   return (
     <main className="max-w-3xl mx-auto py-12 px-6 text-gray-800">
       <h1 className="text-4xl font-bold mb-4">{data.title}</h1>
@@ -36,24 +51,45 @@ export default async function IndustryDetailPage({ params }: Props) {
       )}
       <article className="prose prose-lg mb-12" dangerouslySetInnerHTML={{ __html: processed.toString() }} />
 
-      <div className="flex flex-wrap gap-3">
-        {data.relatedSkills?.map((skill: string) => (
-          <Link key={skill} href={`/expertise/skills/${skill}`}>
-            <button className="px-4 py-2 bg-gray-100 text-sm rounded hover:bg-blue-100">🧠 {skill}</button>
-          </Link>
-        ))}
+      <div className="space-y-6 mt-6">
+        {skills.length > 0 && (
+          <div>
+            <h3 className="text-xl font-semibold mb-2">Related Skillsets</h3>
+            <div className="flex flex-wrap gap-3">
+              {skills.map(({ slug, title }) => (
+                <Link key={slug} href={`/expertise/skills/${slug}`}>
+                  <button className="px-2 py-1 bg-gray-100 text-[10px] rounded hover:bg-blue-100">🧠 {title}</button>
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
 
-        {data.relatedProjects?.map((project: string) => (
-          <Link key={project} href={`/projects/${project}`}>
-            <button className="px-4 py-2 bg-gray-100 text-sm rounded hover:bg-blue-100">📁 {project}</button>
-          </Link>
-        ))}
+        {projects.length > 0 && (
+          <div>
+            <h3 className="text-xl font-semibold mb-2">Related Projects</h3>
+            <div className="flex flex-wrap gap-3">
+              {projects.map(({ slug, title }) => (
+                <Link key={slug} href={`/projects/${slug}`}>
+                  <button className="px-2 py-1 bg-gray-100 text-[10px] rounded hover:bg-blue-100">📁 {title}</button>
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
 
-        {data.relatedBlogs?.map((blog: string) => (
-          <Link key={blog} href={`/blog/${blog}`}>
-            <button className="px-4 py-2 bg-gray-100 text-sm rounded hover:bg-blue-100">📝 {blog}</button>
-          </Link>
-        ))}
+        {blogs.length > 0 && (
+          <div>
+            <h3 className="text-xl font-semibold mb-2">Related Blogs</h3>
+            <div className="flex flex-wrap gap-3">
+              {blogs.map(({ slug, title }) => (
+                <Link key={slug} href={`/blog/${slug}`}>
+                  <button className="px-2 py-1 bg-gray-100 text-[10px] rounded hover:bg-blue-100">📝 {title}</button>
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </main>
   )

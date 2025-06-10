@@ -2,9 +2,37 @@
 title: "CRM, Customer Economics & Sales Analytics"
 excerpt: "Customer Lifetime Value (CLV) | Customer Acquisition Cost (CAC) | Net Asset Value (NAV) | Retention Rate | Churn Rate | Average Revenue Per User (ARPU) | Customer Profitability | Repeat Purchase Rate | Customer Engagement Score | Net Promoter Score (NPS) | Lead Conversion Rate | Sales Velocity | Opportunity Win Rate | Deal Size | Sales Cycle Length | Lead Response Time | Hubspot | Salesforce | Google Analytics | Power BI | Tableau"
 thumbnail: "skills/ce.jpg"
-relatedIndustries: ["retail"]
-relatedProjects: ["insights-dashboard"]
-relatedBlogs: ["data-driven-growth"]
+relatedIndustries: ["boutique-consultancy","ecommerce","semiconductors","marketing-research"]
+relatedProjects: ["abtesting","brandtrackers","clv","competitoranalysis","conversionattribution","discountanalysis","expansionstrategy","investorawareness","mmm","mmmbasedbudgeting"]
+relatedBlogs: [
+  "cross-departmental-data-projects",
+  "finances-at-the-center",
+  "discount-strategy-business-health",
+  "request-to-delivery-analytical-projects",
+  "cba-case-for-decisions",
+  "modern-fpa",
+  "scope-creep-good-and-bad",
+  "product-market-fit-and-ai",
+  "data-driven-expansion",
+  "data-competitor-analysis",
+  "data-and-legal",
+  "erp-readiness-checklist",
+  "rca-saving-tool",
+  "voc-to-product-development-framework",
+  "influencer-without-authority",
+  "data-new-product-development",
+  "analytics-in-ar",
+  "mmm-for-strategy",
+  "cohort-analysis-and-clv",
+  "experimentation",
+  "w-and-h-never-failing-tools",
+  "data-governance-for-startups",
+  "data-science-time-to-market",
+  "erp-and-master-data",
+  "beyond-dashboards",
+  "data-first-not-tools"
+]
+
 ---
 
 ## Customer Economics

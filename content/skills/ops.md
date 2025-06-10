@@ -2,9 +2,37 @@
 title: "Operational Excellence, RCA & Continious Improvement"
 excerpt: "Process Cycle Time |  Cost per Unit | Defect Rate | Lead Time | Inventory Turnover | On-Time Delivery Rate | Six Sigma Project | Lean Waste Reduction | DMAIC Methodology | PDCA Cycle | Kaizen | 5S | Value Stream Mapping | Control Charts | Balanced Scorecard | Minitab | Excel"
 thumbnail: "skills/restructure.jpg"
-relatedIndustries: ["retail"]
-relatedProjects: ["insights-dashboard"]
-relatedBlogs: ["data-driven-growth"]
+relatedIndustries: ["ecommerce","semiconductors","banking","marketing-research"]
+relatedProjects: ["blueprinting","changemanagement","conversionattribution","departmentdev","digitalizationcollaboration","lowtat","mmmbasedbudgeting","sampling","standardization","wastereduction"]
+relatedBlogs: [
+  "cross-departmental-data-projects",
+  "finances-at-the-center",
+  "discount-strategy-business-health",
+  "request-to-delivery-analytical-projects",
+  "cba-case-for-decisions",
+  "modern-fpa",
+  "scope-creep-good-and-bad",
+  "product-market-fit-and-ai",
+  "data-driven-expansion",
+  "data-competitor-analysis",
+  "data-and-legal",
+  "erp-readiness-checklist",
+  "rca-saving-tool",
+  "voc-to-product-development-framework",
+  "influencer-without-authority",
+  "data-new-product-development",
+  "analytics-in-ar",
+  "mmm-for-strategy",
+  "cohort-analysis-and-clv",
+  "experimentation",
+  "w-and-h-never-failing-tools",
+  "data-governance-for-startups",
+  "data-science-time-to-market",
+  "erp-and-master-data",
+  "beyond-dashboards",
+  "data-first-not-tools"
+]
+
 ---
 
 ## Operational Excellence & Continuous Improvement

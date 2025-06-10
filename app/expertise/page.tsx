@@ -25,14 +25,16 @@ export default function ExpertisePage() {
     <section className="space-y-10">
       <h1 className="text-4xl font-bold mb-6">🧠 Expertise</h1>
       <p className="text-lg text-gray-700 max-w-2xl">
-        Explore my core capabilities by skillset or by the industries I’ve worked with.
-        I specialize in a range of areas from data-driven strategy and machine learning to product innovation and financial modeling. Whether it's marketing analytics, operational efficiency, or scalable data systems—my expertise spans across multiple business functions and domains.
+        <strong>It's all about data &amp; Bringing insights to the Management for Data facilitated decision making.</strong> 
+      </p>
+      <p className="text-lg text-gray-700 max-w-2xl">
+        On this page, you can explore my areas of expertise—categorized by skillset and industry. From statistical modeling and analytics automation to operations design and innovation strategy, each project and capability here reflects how I use data to solve real business challenges across various functions.
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6">
         <div className="p-6 border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition bg-white">
           <Link href="/expertise/skills">
-            <h2 className="text-2xl font-semibold mb-2 text-blue-600 hover:underline w-fit">By Skills 🛠️</h2>
+            <h2 className="text-2xl font-semibold mb-2 text-blue-600 hover:underline w-fit">By Skillsets 🛠️</h2>
           </Link>
           <ul className="list-disc list-inside text-gray-600 space-y-1">
             {skills.map((title) => (

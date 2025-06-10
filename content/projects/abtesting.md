@@ -1,24 +1,84 @@
 ---
-title: "Customer Lifetime Value Prediction & Reporting"
-date: "2024-03-20"
-excerpt: "Dashboards to visualize predicted lifetime value and track retention KPIs."
-thumbnail: "clv-thumb.png"
-relatedSkills: ["bi", "ce", "da", "fin", "prod", "pm", "strategy", "ops"]
-relatedIndustries: ["ecommerce", "battery", "boutique-consultancy", "entrepreneurship", "healthcare-life-sciences", "marketing-research", "public-sector", "renewable-energy-carbon-capture", "semiconductors"]
-relatedBlogs: ["optimizing-customer-lifetime-value"]
+title: "Experimentation: Increasing signups through A/B Tests"
+excerpt: "Applied experimentation methods like A/B testing to optimize user engagement, conversion funnels, and campaign effectiveness across marketing touchpoints."
+thumbnail: "projects/abtesting.jpg"
+relatedSkills: ["da","ce","strategy","pm"]
+relatedIndustries: ["boutique-consultancy","ecommerce","marketing-research"]
+relatedBlogs: [
+  "cross-departmental-data-projects",
+  "finances-at-the-center",
+  "discount-strategy-business-health",
+  "request-to-delivery-analytical-projects",
+  "cba-case-for-decisions",
+  "modern-fpa",
+  "scope-creep-good-and-bad",
+  "product-market-fit-and-ai",
+  "data-driven-expansion",
+  "data-competitor-analysis",
+  "data-and-legal",
+  "erp-readiness-checklist",
+  "rca-saving-tool",
+  "voc-to-product-development-framework",
+  "influencer-without-authority",
+  "data-new-product-development",
+  "analytics-in-ar",
+  "mmm-for-strategy",
+  "cohort-analysis-and-clv",
+  "experimentation",
+  "w-and-h-never-failing-tools",
+  "data-governance-for-startups",
+  "data-science-time-to-market",
+  "erp-and-master-data",
+  "beyond-dashboards",
+  "data-first-not-tools"
+]
+
 ---
+
+As Business Analytics Manager and as a part of the Marketing BI, Data Strategy and Growth Optimization teams, I’ve worked hands-on with experimentation to improve user engagement, reactivation, and conversion. A/B testing has been one of the most powerful tools in this process — enabling data-driven decisions across email campaigns and web design to drive measurable business impact.
+
+Whether the goal is to re-engage lapsed users, optimize lead conversion funnels, or boost website performance, experimentation allows one to test hypotheses, validate assumptions, and prioritize what truly works — not just what one thinks might work.
+
+some projects undertaken:
+- Reactivating dormant users through personalized email campaigns.
+- Increasing signups or demo requests on landing pages.
+- Converting leads into paying customers through nurturing emails.
+- Encouraging first-time website visitors to make purchase.
+- Increase CTR (Click-Through Rate) or ROAS (Return on Ad Spend) for social media advertisement.
+- Increasing collection rates through weekly/biweekly payment reminders.
+- Optimizing discount strategy through discount vouchers
 
 ## Project Goal
 
-To enable product and marketing teams to track and segment users by lifetime value.
+Increasing signups or demo requests on landing pages.
 
-### Stack
+### Test
+A/B test positioning of the CTA button (e.g., above-the-fold vs. below-the-fold).
+- Version A: CTA at the top
+- Version B: CTA at the bottom
 
-- Python + Pandas for modeling
-- Tableau for dashboard delivery
-- dbt + Snowflake for pipeline
+### Hypothesis
+Moving the CTA button to the top will increase signups.
 
 ### Results
+- Chi-square statistic: 7.45
+- p-value: 0.0064
 
-- Retention up by 15%
-- $300K increase in CLV
+### Interpretation
+- Group A (CTA at the top) has a noticeably higher conversion rate (13.8%) than Group B (CTA at the bottom) at 8.2%.
+- The p-value < 0.05 means this difference is statistically significant — it’s very unlikely to have happened by chance.
+
+### Business Implications
+- Moving the CTA button to the top of the page could significantly increase conversions.
+- This small UX change might drive a ~5.6% absolute increase in conversions.
+- Over time, more revenue or users without extra marketing spend.
+
+### Stack
+- Python + Pandas for modeling
+- Tableau for dashboard delivery
+- DBT (SQL) + Salesforce + Snowflake for pipeline
+
+#### Additional Resources (for this project)
+
+- [A/B Test: Python File](../../contents/others/abtest.py)
+- [Cleaned Data for Viewing or Practice](../../contents/others/abtest_not_original.csv)

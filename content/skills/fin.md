@@ -2,9 +2,37 @@
 title: "Financial Planning, Modeling & Scenario Analysis"
 excerpt: "Revenue Growth Rate | Gross Margin | EBITDA | Net Profit Margin | Cash Flow | Break-Even Point | Discounted Cash Flow (DCF) | Sensitivity Analysis | Scenario Planning | Return on Investment (ROI) | Internal Rate of Return (IRR) | Excel | Google Sheets"
 thumbnail: "skills/finance-analysis.jpg"
-relatedIndustries: ["retail"]
-relatedProjects: ["insights-dashboard"]
-relatedBlogs: ["data-driven-growth"]
+relatedIndustries: ["public-sector","boutique-consultancy","ecommerce","semiconductors","marketing-research"]
+relatedProjects: ["automatedsorting","blueprinting","cashanalysis","financialrestructure","investorawareness","scenarioanalysis","standardization"]
+relatedBlogs: [
+  "cross-departmental-data-projects",
+  "finances-at-the-center",
+  "discount-strategy-business-health",
+  "request-to-delivery-analytical-projects",
+  "cba-case-for-decisions",
+  "modern-fpa",
+  "scope-creep-good-and-bad",
+  "product-market-fit-and-ai",
+  "data-driven-expansion",
+  "data-competitor-analysis",
+  "data-and-legal",
+  "erp-readiness-checklist",
+  "rca-saving-tool",
+  "voc-to-product-development-framework",
+  "influencer-without-authority",
+  "data-new-product-development",
+  "analytics-in-ar",
+  "mmm-for-strategy",
+  "cohort-analysis-and-clv",
+  "experimentation",
+  "w-and-h-never-failing-tools",
+  "data-governance-for-startups",
+  "data-science-time-to-market",
+  "erp-and-master-data",
+  "beyond-dashboards",
+  "data-first-not-tools"
+]
+
 ---
 
 ## Financial Modeling & Scenario Analysis

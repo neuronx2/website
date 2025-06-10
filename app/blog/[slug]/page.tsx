@@ -6,9 +6,6 @@ import html from 'remark-html'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 
-type Props = {
-  params: { slug: string }
-}
 
 type RelatedItem = {
   slug: string
@@ -43,7 +40,7 @@ export async function generateStaticParams() {
     }));
 }
 
-export default async function BlogPostPage({ params }: Props) {
+export default async function BlogPostPage({ params }: { params: { slug: string } }) {
   const slug = decodeURIComponent(params.slug)
   const filePath = path.join(process.cwd(), 'content/blogs', `${slug}.md`)
 

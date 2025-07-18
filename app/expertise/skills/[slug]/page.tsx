@@ -7,12 +7,13 @@ import Link from 'next/link'
 import { remark } from 'remark'
 import html from 'remark-html'
 
-type Props = {
-  params: { slug: string }
-}
-
-export default async function SkillDetailPage({ params }: Props) {
-  const slug = params.slug
+export default async function SkillDetailPage({
+  params,
+}: {
+  params: { slug: string } | Promise<{ slug: string }>
+}) {
+  const awaitedParams = await Promise.resolve(params)
+  const slug = awaitedParams.slug
   const filePath = path.join(process.cwd(), 'content/skills', `${slug}.md`)
 
   if (!fs.existsSync(filePath)) return notFound()

@@ -6,83 +6,88 @@ import html from 'remark-html'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 
-
 type RelatedItem = {
   slug: string
   title: string
   excerpt: string
 }
 
-function getRelated(folder: string, slugs: string[]): RelatedItem[] {
-  return slugs.map((slug) => {
-    const filePath = path.join(process.cwd(), 'content', folder, `${slug}.md`)
-    if (!fs.existsSync(filePath)) return null
+async function getRelated(folder: string, slugs: string[]): Promise<RelatedItem[]> {
+  const items = await Promise.all(
+    slugs.map(async (slug) => {
+      try {
+        const filePath = path.join(process.cwd(), 'content', folder, `${slug}.md`)
+        const fileContent = await fs.promises.readFile(filePath, 'utf8')
+        const { data } = matter(fileContent)
+        return {
+          slug,
+          title: data.title,
+          excerpt: data.excerpt,
+        }
+      } catch {
+        return null
+      }
+    })
+  )
 
-    const fileContent = fs.readFileSync(filePath, 'utf8')
-    const { data } = matter(fileContent)
-
-    return {
-      slug,
-      title: data.title,
-      excerpt: data.excerpt,
-    }
-  }).filter(Boolean) as RelatedItem[]
+  return items.filter(Boolean) as RelatedItem[]
 }
 
 export async function generateStaticParams() {
-  const blogDir = path.join(process.cwd(), 'content/blogs');
-  const filenames = fs.readdirSync(blogDir);
+  const blogDir = path.join(process.cwd(), 'content/blogs')
+  const filenames = await fs.promises.readdir(blogDir)
 
-  return filenames
-    .filter(name => name.endsWith('.md'))
-    .map(name => ({
-      slug: name.replace(/\.md$/, ''),
-    }));
+  return filenames.map((name) => ({
+    slug: name.replace(/\.md$/, ''),
+  }))
 }
 
-export default async function BlogPostPage({ params }: { params: { slug: string } }) {
-  const slug = decodeURIComponent(params.slug)
+export default async function TestSlugPage({
+  params,
+}: {
+  params: { slug: string } | Promise<{ slug: string }>
+}) {
+  console.log('🟢 TestSlugPage is running')
+  const awaitedParams = await Promise.resolve(params)
+  const slug = decodeURIComponent(awaitedParams.slug)
   const filePath = path.join(process.cwd(), 'content/blogs', `${slug}.md`)
 
-  if (!fs.existsSync(filePath)) return notFound()
+  try {
+    await fs.promises.access(filePath)
+  } catch {
+    return notFound()
+  }
 
-  const fileContent = fs.readFileSync(filePath, 'utf8')
+  const fileContent = await fs.promises.readFile(filePath, 'utf8')
   const { data, content } = matter(fileContent)
-  const processed = remark().use(html).processSync(content)
+  const processed = await remark().use(html).process(content)
 
-  const relatedSkills = getRelated('skills', data.relatedSkills || [])
-  const relatedIndustries = getRelated('industries', data.relatedIndustries || [])
-  const relatedProjects = getRelated('projects', data.relatedProjects || [])
+  const relatedSkills = await getRelated('skills', data.relatedSkills || [])
+  const relatedIndustries = await getRelated('industries', data.relatedIndustries || [])
+  const relatedProjects = await getRelated('projects', data.relatedProjects || [])
 
   return (
-    <main className="max-w-2xl mx-auto py-8 px-4 text-gray-800 bg-gray-50 min-h-screen">
+    <main className="max-w-2xl mx-auto py-8 px-4">
       <h1 className="text-4xl font-bold mb-4">{data.title}</h1>
       <p className="text-sm text-gray-500 mb-6">{data.date}</p>
       <article
-        className="prose prose-base max-w-none mb-6 bg-white shadow-lg rounded-lg p-6 border border-gray-200 hover:shadow-xl transition duration-300"
+        className="prose mb-6"
         dangerouslySetInnerHTML={{ __html: processed.toString() }}
       />
-
-      <div className="flex flex-wrap gap-4 mb-6">
+      <div className="flex flex-wrap gap-4">
         {relatedSkills.map((item) => (
           <Link key={item.slug} href={`/expertise/skills/${item.slug}`}>
-            <button className="px-4 py-2 bg-blue-100 text-blue-700 rounded hover:bg-blue-200">
-              {item.title}
-            </button>
+            <button>{item.title}</button>
           </Link>
         ))}
         {relatedIndustries.map((item) => (
           <Link key={item.slug} href={`/expertise/industry/${item.slug}`}>
-            <button className="px-4 py-2 bg-green-100 text-green-700 rounded hover:bg-green-200">
-              {item.title}
-            </button>
+            <button>{item.title}</button>
           </Link>
         ))}
         {relatedProjects.map((item) => (
           <Link key={item.slug} href={`/projects/${item.slug}`}>
-            <button className="px-4 py-2 bg-yellow-100 text-yellow-700 rounded hover:bg-yellow-200">
-              {item.title}
-            </button>
+            <button>{item.title}</button>
           </Link>
         ))}
       </div>

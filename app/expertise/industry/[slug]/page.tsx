@@ -7,12 +7,13 @@ import html from 'remark-html'
 import Image from 'next/image'
 import Link from 'next/link'
 
-type Props = {
-  params: { slug: string }
-}
-
-export default async function IndustryDetailPage({ params }: Props) {
-  const slug = decodeURIComponent(params.slug)
+export default async function IndustryDetailPage({
+  params,
+}: {
+  params: { slug: string } | Promise<{ slug: string }>
+}) {
+  const awaitedParams = await Promise.resolve(params)
+  const slug = decodeURIComponent(awaitedParams.slug)
 
   const filePath = path.join(process.cwd(), 'content/industries', `${slug}.md`)
   if (!fs.existsSync(filePath)) return notFound()

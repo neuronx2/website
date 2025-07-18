@@ -6,9 +6,6 @@ import html from 'remark-html'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 
-type Props = {
-  params: { slug: string }
-}
 
 type RelatedItem = {
   slug: string
@@ -32,8 +29,13 @@ async function getRelated(folder: string, slugs: string[]): Promise<RelatedItem[
   }).filter(Boolean) as RelatedItem[]
 }
 
-export default async function ProjectPage({ params }: Props) {
-  const slug = params.slug
+export default async function ProjectPage({
+  params,
+}: {
+  params: { slug: string } | Promise<{ slug: string }>
+}) {
+  const awaitedParams = await Promise.resolve(params)
+  const slug = awaitedParams.slug
   const filePath = path.join(process.cwd(), 'content/projects', `${slug}.md`)
 
   if (!fs.existsSync(filePath)) return notFound()

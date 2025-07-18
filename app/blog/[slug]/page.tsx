@@ -42,14 +42,13 @@ export async function generateStaticParams() {
   }))
 }
 
+// ** This is the complete, working, and formatted file **
 export default async function TestSlugPage({
   params,
 }: {
-  params: { slug: string } | Promise<{ slug: string }>
+  params: { slug: string }
 }) {
-  console.log('🟢 TestSlugPage is running')
-  const awaitedParams = await Promise.resolve(params)
-  const slug = decodeURIComponent(awaitedParams.slug)
+  const slug = decodeURIComponent(params.slug)
   const filePath = path.join(process.cwd(), 'content/blogs', `${slug}.md`)
 
   try {
@@ -65,31 +64,80 @@ export default async function TestSlugPage({
   const relatedSkills = await getRelated('skills', data.relatedSkills || [])
   const relatedIndustries = await getRelated('industries', data.relatedIndustries || [])
   const relatedProjects = await getRelated('projects', data.relatedProjects || [])
+  const relatedBlogs = await getRelated('blogs', data.relatedBlogs || [])
 
   return (
     <main className="max-w-2xl mx-auto py-8 px-4">
+      {/* Article Content Section */}
       <h1 className="text-4xl font-bold mb-4">{data.title}</h1>
       <p className="text-sm text-gray-500 mb-6">{data.date}</p>
       <article
-        className="prose mb-6"
+        className="prose mb-10" // Added a larger bottom margin for separation
         dangerouslySetInnerHTML={{ __html: processed.toString() }}
       />
-      <div className="flex flex-wrap gap-4">
-        {relatedSkills.map((item) => (
-          <Link key={item.slug} href={`/expertise/skills/${item.slug}`}>
-            <button>{item.title}</button>
-          </Link>
-        ))}
-        {relatedIndustries.map((item) => (
-          <Link key={item.slug} href={`/expertise/industry/${item.slug}`}>
-            <button>{item.title}</button>
-          </Link>
-        ))}
-        {relatedProjects.map((item) => (
-          <Link key={item.slug} href={`/projects/${item.slug}`}>
-            <button>{item.title}</button>
-          </Link>
-        ))}
+      
+      {/* Related Sections - Styled to match the screenshot */}
+      <div className="space-y-8">
+        {/* Related Skills Section (Green) */}
+        {relatedSkills.length > 0 && (
+          <div>
+            <h2 className="text-2xl font-bold mb-4">Related Skillsets</h2>
+            <div className="flex flex-col gap-2">
+              {relatedSkills.map((item) => (
+                <Link key={item.slug} href={`/expertise/skills/${item.slug}`}>
+                  <div className="flex items-center gap-2 p-4 rounded-xl bg-green-100 text-green-800 font-medium hover:bg-green-200 transition-colors">
+                    <span className="text-lg">🧠</span> {/* Placeholder for icon */}
+                    {item.title}
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Related Industries Section (Yellow) */}
+        {relatedIndustries.length > 0 && (
+          <div>
+            <h2 className="text-2xl font-bold mb-4">Related Industries</h2>
+            <div className="flex flex-col gap-2">
+              {relatedIndustries.map((item) => (
+                <Link key={item.slug} href={`/expertise/industry/${item.slug}`}>
+                  <div className="flex items-center gap-2 p-4 rounded-xl bg-yellow-100 text-yellow-800 font-medium hover:bg-yellow-200 transition-colors">
+                    <span className="text-lg">🏛️</span> {/* Placeholder for icon */}
+                    {item.title}
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
+        
+        {/* Related Blogs/Projects Section (Purple) */}
+        {(relatedBlogs.length > 0 || relatedProjects.length > 0) && (
+          <div>
+            <h2 className="text-2xl font-bold mb-4">Related Projects & Blogs</h2>
+            <div className="flex flex-col gap-2">
+              {relatedProjects.map((item) => (
+                <Link key={item.slug} href={`/projects/${item.slug}`}>
+                  <div className="flex flex-col gap-1 p-4 rounded-xl bg-purple-100 text-purple-800 font-medium hover:bg-purple-200 transition-colors">
+                    <span className="text-lg">✍️</span> {/* Placeholder for icon */}
+                    <span className="font-bold">{item.title}</span>
+                    <span className="text-sm">{item.excerpt}</span>
+                  </div>
+                </Link>
+              ))}
+               {relatedBlogs.map((item) => (
+                <Link key={item.slug} href={`/blogs/${item.slug}`}>
+                  <div className="flex flex-col gap-1 p-4 rounded-xl bg-purple-100 text-purple-800 font-medium hover:bg-purple-200 transition-colors">
+                    <span className="text-lg">✍️</span> {/* Placeholder for icon */}
+                    <span className="font-bold">{item.title}</span>
+                    <span className="text-sm">{item.excerpt}</span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </main>
   )

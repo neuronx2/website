@@ -40,8 +40,7 @@ export async function generateStaticParams() {
     }));
 }
 
-export default async function BlogPostPage(props: Promise<{ params: { slug: string } }>) {
-  const { params } = await props
+export default async function BlogPostPage({ params }: { params: { slug: string } }) {
   const slug = decodeURIComponent(params.slug)
   const filePath = path.join(process.cwd(), 'content/blogs', `${slug}.md`)
 

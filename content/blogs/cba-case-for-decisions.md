@@ -2,7 +2,7 @@
 title: "Cost-Benefit Analysis in Action: Making the Case for Operational Change"
 excerpt: "A hands-on guide to using CBA to justify strategic shifts and resource allocation.."
 thumbnail: "blogs/3.jpg"
-relatedSkills: ["data-analytics", "machine-learning"]
+relatedSkills: ["da", "ops", "strategy","ce","bi","fin","pm","prod"]
 relatedIndustries: ["ecommerce"]
 relatedProjects: ["clv-dashboard"]
 ---

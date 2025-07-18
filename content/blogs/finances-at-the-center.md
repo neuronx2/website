@@ -2,7 +2,7 @@
 title: "The Finance-Analytics Link: Bridging Marketing, Strategy, and Numbers"
 excerpt: "A look at how modern financial planning integrates seamlessly with business intelligence..."
 thumbnail: "blogs/16.jpg"
-relatedSkills: ["data-analytics", "machine-learning"]
+relatedSkills: ["da", "ops", "strategy","ce","bi","fin","pm","prod"]
 relatedIndustries: ["ecommerce"]
 relatedProjects: ["clv-dashboard"]
 ---

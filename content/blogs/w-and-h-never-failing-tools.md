@@ -2,7 +2,7 @@
 title: "Classical Scientific method, Why's, How's & Other basic questions: The silent long standing friend for Analytical Brain"
 excerpt: "Rediscover the scientific method as the timeless framework behind today’s best data thinking."
 thumbnail: "blogs/25.jpg"
-relatedSkills: ["data-analytics", "machine-learning"]
+relatedSkills: ["da", "ops", "strategy","ce","bi","fin","pm","prod"]
 relatedIndustries: ["ecommerce"]
 relatedProjects: ["clv-dashboard"]
 ---

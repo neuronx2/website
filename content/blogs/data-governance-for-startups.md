@@ -2,7 +2,7 @@
 title: "From Zero to Insight: Data Governance for Startups That Actually Scales"
 excerpt: "Build strong data foundations from day one and avoid messy growth pains later."
 thumbnail: "blogs/10.jpg"
-relatedSkills: ["data-analytics", "machine-learning"]
+relatedSkills: ["da", "ops", "strategy","ce","bi","fin","pm","prod"]
 relatedIndustries: ["ecommerce"]
 relatedProjects: ["clv-dashboard"]
 ---

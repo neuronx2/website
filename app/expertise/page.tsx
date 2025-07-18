@@ -22,7 +22,7 @@ export default function ExpertisePage() {
   const industries = getTitlesFromMarkdown('content/industries')
 
   return (
-    <section className="space-y-10">
+    <section className="space-y-10 pt-20">
       <h1 className="text-4xl font-bold mb-6">🧠 Expertise</h1>
       <p className="text-lg text-gray-700 max-w-2xl">
         <strong>It's all about data &amp; Bringing insights to the Management for Data facilitated decision making.</strong> 

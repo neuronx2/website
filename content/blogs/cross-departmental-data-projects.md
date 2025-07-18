@@ -2,7 +2,7 @@
 title: "Aligning Stakeholders with Data: Lessons from Leading Cross-Departmental Strategy Projects"
 excerpt: "Practical ways to bridge teams and build consensus using insight-driven narratives.."
 thumbnail: "blogs/5.jpg"
-relatedSkills: ["data-analytics", "machine-learning"]
+relatedSkills: ["da", "ops", "strategy","ce","bi","fin","pm","prod"]
 relatedIndustries: ["ecommerce"]
 relatedProjects: ["clv-dashboard"]
 ---

@@ -2,7 +2,7 @@
 title: "Innovative guide to spy on your competitor: Legally"
 excerpt: "Ethical, data-driven ways to benchmark and outmaneuver competitors without crossing lines."
 thumbnail: "blogs/7.jpg"
-relatedSkills: ["data-analytics", "machine-learning"]
+relatedSkills: ["da", "ops", "strategy","ce","bi","fin","pm","prod"]
 relatedIndustries: ["ecommerce"]
 relatedProjects: ["clv-dashboard"]
 ---

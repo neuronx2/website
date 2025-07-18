@@ -2,7 +2,7 @@
 title: "The Role of Data Science in Shortening Time-to-Market in Industrial Manufacturing"
 excerpt: "Predictive analytics, KPI modeling, and process optimization accelerate product development in complex industrial ecosystems."
 thumbnail: "blogs/12.jpg"
-relatedSkills: ["data-analytics", "machine-learning"]
+relatedSkills: ["da", "ops", "strategy","ce","bi","fin","pm","prod"]
 relatedIndustries: ["ecommerce"]
 relatedProjects: ["clv-dashboard"]
 ---

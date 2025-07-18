@@ -2,7 +2,7 @@
 title: "When Legal Meets Data: Navigating GDPR, Compliance, and Data Ethics in Strategy Projects"
 excerpt: "A data strategist’s lens on ensuring trust and compliance in today’s regulatory environment.."
 thumbnail: "blogs/6.jpg"
-relatedSkills: ["data-analytics", "machine-learning"]
+relatedSkills: ["da", "ops", "strategy","ce","bi","fin","pm","prod"]
 relatedIndustries: ["ecommerce"]
 relatedProjects: ["clv-dashboard"]
 ---

@@ -2,36 +2,8 @@
 title: "New Product Development & Innovations Management"
 excerpt: "Customer Satisfaction (CSAT) | Time to Market | R&D Spend Efficiency | Marketing Research | Market Penetration | Innovation ROI | Net Promoter Score (NPS) | Blueprinting | Design Thinking Framework | Stage-Gate Process | Jira | Confluence"
 thumbnail: "skills/product-dev.jpg"
-relatedIndustries: ["boutique-consultancy","ecommerce","semiconductors","marketing-research","healthcare-life-sciences"]
-relatedProjects: ["automatedsorting","blueprinting","clv","collectionanalysis","competitoranalysis","digitalizationcollaboration","expansionstrategy","mnatracker","tolunaneilsen","vaccines","wastereduction"]
-relatedBlogs: [
-  "cross-departmental-data-projects",
-  "finances-at-the-center",
-  "discount-strategy-business-health",
-  "request-to-delivery-analytical-projects",
-  "cba-case-for-decisions",
-  "modern-fpa",
-  "scope-creep-good-and-bad",
-  "product-market-fit-and-ai",
-  "data-driven-expansion",
-  "data-competitor-analysis",
-  "data-and-legal",
-  "erp-readiness-checklist",
-  "rca-saving-tool",
-  "voc-to-product-development-framework",
-  "influencer-without-authority",
-  "data-new-product-development",
-  "analytics-in-ar",
-  "mmm-for-strategy",
-  "cohort-analysis-and-clv",
-  "experimentation",
-  "w-and-h-never-failing-tools",
-  "data-governance-for-startups",
-  "data-science-time-to-market",
-  "erp-and-master-data",
-  "beyond-dashboards",
-  "data-first-not-tools"
-]
+relatedIndustries: ["ecommerce","semiconductors","marketing-research","healthcare-life-sciences"]
+relatedProjects: ["blueprinting","clv","digitalizationcollaboration","expansionstrategy","tolunaneilsen","vaccines"]
 
 ---
 

@@ -2,7 +2,7 @@
 title: "Demystifying Marketing Mix Modeling: A Practical Guide for CMOs & Analysts"
 excerpt: "Learn how to evaluate and optimize channel performance with real marketing math."
 thumbnail: "blogs/18.jpg"
-relatedSkills: ["data-analytics", "machine-learning"]
+relatedSkills: ["da", "ops", "strategy","ce","bi","fin","pm","prod"]
 relatedIndustries: ["ecommerce"]
 relatedProjects: ["clv-dashboard"]
 ---

@@ -3,36 +3,7 @@ title: "Data Analytics, Data Science & Machine Learning"
 excerpt: "Conversion Rate | Discount Analysis | Average Order Value (AOV) | Churn Rate | Return on Investment (ROI) | Funnel Drop-off Rate | Revenue Growth Rate | Forecast Accuracy | Python | SQL | Excel | Power BI | Tableau | Model Accuracy | Precision | Model Explainability | Jupyter Notebooks | scikit-learn | TensorFlow | PyTorch | XGBoost | Regression | Clustering"
 thumbnail: "skills/da.jpg"
 relatedIndustries: ["boutique-consultancy","ecommerce","semiconductors","banking","marketing-research"]
-relatedProjects: ["abtesting","brandtrackers","changemanagement","clv","collectionanalysis","competitoranalysis","conversionattribution","crmimplimentation","discountanalysis","expansionstrategy","lowtat","mmm","mmmbasedbudgeting","mnatracker","sampling","tolunaneilsen","vaccines","wastereduction"]
-relatedBlogs: [
-  "cross-departmental-data-projects",
-  "finances-at-the-center",
-  "discount-strategy-business-health",
-  "request-to-delivery-analytical-projects",
-  "cba-case-for-decisions",
-  "modern-fpa",
-  "scope-creep-good-and-bad",
-  "product-market-fit-and-ai",
-  "data-driven-expansion",
-  "data-competitor-analysis",
-  "data-and-legal",
-  "erp-readiness-checklist",
-  "rca-saving-tool",
-  "voc-to-product-development-framework",
-  "influencer-without-authority",
-  "data-new-product-development",
-  "analytics-in-ar",
-  "mmm-for-strategy",
-  "cohort-analysis-and-clv",
-  "experimentation",
-  "w-and-h-never-failing-tools",
-  "data-governance-for-startups",
-  "data-science-time-to-market",
-  "erp-and-master-data",
-  "beyond-dashboards",
-  "data-first-not-tools"
-]
-
+relatedProjects: ["abtesting","brandtrackers","clv","competitoranalysis","conversionattribution","crmimplimentation","discountanalysis","mmm","mmmbasedbudgeting","tolunaneilsen"]
 ---
 
 ## Summary

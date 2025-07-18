@@ -2,7 +2,7 @@
 title: "Building Products with Purpose: Data Blueprinting for R&D and Innovation Pipelines"
 excerpt: "How to connect analytics with product ideation to reduce time-to-market and risk."
 thumbnail: "blogs/11.jpg"
-relatedSkills: ["data-analytics", "machine-learning"]
+relatedSkills: ["da", "ops", "strategy","ce","bi","fin","pm","prod"]
 relatedIndustries: ["ecommerce"]
 relatedProjects: ["clv-dashboard"]
 ---

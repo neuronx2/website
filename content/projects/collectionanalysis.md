@@ -5,32 +5,11 @@ thumbnail: "projects/collections-thumb.png"
 relatedSkills: ["ops","da","strategy"]
 relatedIndustries: ["public-sector","banking"]
 relatedBlogs: [
-  "cross-departmental-data-projects",
   "finances-at-the-center",
-  "discount-strategy-business-health",
-  "request-to-delivery-analytical-projects",
   "cba-case-for-decisions",
-  "modern-fpa",
-  "scope-creep-good-and-bad",
-  "product-market-fit-and-ai",
-  "data-driven-expansion",
-  "data-competitor-analysis",
-  "data-and-legal",
-  "erp-readiness-checklist",
-  "rca-saving-tool",
-  "voc-to-product-development-framework",
-  "influencer-without-authority",
-  "data-new-product-development",
   "analytics-in-ar",
-  "mmm-for-strategy",
   "cohort-analysis-and-clv",
-  "experimentation",
   "w-and-h-never-failing-tools",
-  "data-governance-for-startups",
-  "data-science-time-to-market",
-  "erp-and-master-data",
-  "beyond-dashboards",
-  "data-first-not-tools"
 ]
 
 ---

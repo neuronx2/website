@@ -2,7 +2,7 @@
 title: "Implementing ERP? Here’s Why Master Data Management Comes First"
 excerpt: "Avoid chaos during ERP rollouts by securing a clean and unified data foundation.."
 thumbnail: "blogs/14.jpg"
-relatedSkills: ["data-analytics", "machine-learning"]
+relatedSkills: ["da", "ops", "strategy","ce","bi","fin","pm","prod"]
 relatedIndustries: ["ecommerce"]
 relatedProjects: ["clv-dashboard"]
 ---

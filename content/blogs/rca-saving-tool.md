@@ -2,7 +2,7 @@
 title: "How Root Cause Analysis Can Save Millions: Lessons from Manufacturing, Banking, and E-Commerce"
 excerpt: "How structured problem-solving techniques can drive massive cost savings across industries."
 thumbnail: "blogs/21.jpg"
-relatedSkills: ["data-analytics", "machine-learning"]
+relatedSkills: ["da", "ops", "strategy","ce","bi","fin","pm","prod"]
 relatedIndustries: ["ecommerce"]
 relatedProjects: ["clv-dashboard"]
 ---

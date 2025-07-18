@@ -2,7 +2,7 @@
 title: "Scope Creep Isn’t Always Bad — Sometimes It’s How Innovation Happens"
 excerpt: "How to turn shifting requirements into opportunities for creative breakthroughs."
 thumbnail: "blogs/23.jpg"
-relatedSkills: ["data-analytics", "machine-learning"]
+relatedSkills: ["da", "ops", "strategy","ce","bi","fin","pm","prod"]
 relatedIndustries: ["ecommerce"]
 relatedProjects: ["clv-dashboard"]
 ---

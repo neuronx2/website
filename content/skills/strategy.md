@@ -2,37 +2,8 @@
 title: "Data Backed Expansion Strategy Development"
 excerpt: "Market Share Growth | Revenue from New Markets | Customer Acquisition Rate | Geographic Footprint Expansion | New Product Revenue Contribution | M&A Success Rate | SWOT Analysis | Porter's Five Forces | Synergy Mapping | Post-Merger Integration | Market Feasibility Study | Business Case Development | BCG Matrix | Power BI | Excel | Crunchbase | PitchBook | Tableau | Patsnap"
 thumbnail: "skills/data-strategy.jpg"
-relatedIndustries: ["ecommerce","semiconductors","banking","marketing-research","renewable-energy-carbon-capture", "battery","entrepreneurship"]
-relatedProjects: ["abtesting","automatedsorting","brandtrackers","changemanagement","clv","collectionanalysis","commodity","competitoranalysis","departmentdev","digitalization","expansionstrategy","financialrestructure","investorawareness","mnatracker","sampling","scenarioanalysis","standardization"]
-relatedBlogs: [
-  "cross-departmental-data-projects",
-  "finances-at-the-center",
-  "discount-strategy-business-health",
-  "request-to-delivery-analytical-projects",
-  "cba-case-for-decisions",
-  "modern-fpa",
-  "scope-creep-good-and-bad",
-  "product-market-fit-and-ai",
-  "data-driven-expansion",
-  "data-competitor-analysis",
-  "data-and-legal",
-  "erp-readiness-checklist",
-  "rca-saving-tool",
-  "voc-to-product-development-framework",
-  "influencer-without-authority",
-  "data-new-product-development",
-  "analytics-in-ar",
-  "mmm-for-strategy",
-  "cohort-analysis-and-clv",
-  "experimentation",
-  "w-and-h-never-failing-tools",
-  "data-governance-for-startups",
-  "data-science-time-to-market",
-  "erp-and-master-data",
-  "beyond-dashboards",
-  "data-first-not-tools"
-]
-
+relatedIndustries: ["ecommerce","semiconductors","renewable-energy-carbon-capture", "battery","entrepreneurship"]
+relatedProjects: ["abtesting","brandtrackers","clv","competitoranalysis","expansionstrategy","financialrestructure","mnatracker"]
 ---
 
 ## Data-Backed Expansion Strategy Development

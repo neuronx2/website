@@ -40,7 +40,8 @@ export async function generateStaticParams() {
     }));
 }
 
-export default function BlogPostPage({ params }: { params: { slug: string } }) {
+export default async function BlogPostPage(props: Promise<{ params: { slug: string } }>) {
+  const { params } = await props
   const slug = decodeURIComponent(params.slug)
   const filePath = path.join(process.cwd(), 'content/blogs', `${slug}.md`)
 
@@ -55,11 +56,11 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
   const relatedProjects = getRelated('projects', data.relatedProjects || [])
 
   return (
-    <main className="max-w-3xl mx-auto py-12 px-6 text-gray-800">
+    <main className="max-w-2xl mx-auto py-8 px-4 text-gray-800 bg-gray-50 min-h-screen">
       <h1 className="text-4xl font-bold mb-4">{data.title}</h1>
       <p className="text-sm text-gray-500 mb-6">{data.date}</p>
       <article
-        className="prose prose-lg max-w-none mb-10"
+        className="prose prose-base max-w-none mb-6 bg-white shadow-lg rounded-lg p-6 border border-gray-200 hover:shadow-xl transition duration-300"
         dangerouslySetInnerHTML={{ __html: processed.toString() }}
       />
 

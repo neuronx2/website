@@ -2,7 +2,7 @@
 title: "Cohort Analysis Meets CLV: Transforming E-Commerce Growth Strategy with Predictive Insights"
 excerpt: "Unlock smarter segmentation and lifecycle modeling to supercharge acquisition and retention.."
 thumbnail: "blogs/4.jpg"
-relatedSkills: ["data-analytics", "machine-learning"]
+relatedSkills: ["da", "ops", "strategy","ce","bi","fin","pm","prod"]
 relatedIndustries: ["ecommerce"]
 relatedProjects: ["clv-dashboard"]
 ---

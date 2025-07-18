@@ -15,7 +15,7 @@ export default function Navbar() {
   const pathname = usePathname()
 
   return (
-    <nav className="w-full border-b bg-white px-6 py-4 shadow-sm">
+    <nav className="fixed top-0 left-0 w-full border-b bg-white px-6 py-4 shadow-sm z-50">
       <div className="max-w-5xl mx-auto flex justify-between items-center">
         <Link href="/" className="text-xl font-bold text-blue-600">
           Neuronχ²

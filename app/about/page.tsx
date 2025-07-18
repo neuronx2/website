@@ -2,13 +2,13 @@
 
 export default function AboutPage() {
   return (
-    <section className="space-y-6">
+    <section className="space-y-6 pt-20">
       <h1 className="text-4xl font-bold">Hi, I’m Kushagra 👋</h1>
       <p className="text-lg leading-relaxed max-w-2xl">
         I’m a strategist, technologist, and lifelong learner — passionate about turning complex data into simple insights for successful business stories.
         <br />
         <br />
-        <span className="font-semibold">Neuronχ²</span> is my digital home for projects, blogs, and all things curiosity-powered.
+        <span className="font-semibold">Neuronχ²</span> is my digital home for projects, blogs, and all other curiosity-powered things.
       </p>
 
       <div className="flex flex-wrap gap-4 pt-4">
@@ -71,8 +71,8 @@ export default function AboutPage() {
         <ul className="list-disc pl-5 space-y-1">
           <li>Six Sigma Black Belt</li>
           <li>Data Analytics using Python</li>
-          <li>SAP FI/CO (Financial Accounting & Controlling)</li>
-          <li>ITIL (Information Technology Infrastructure Library)</li>
+          <li>SAP FI/CO Consultant(Financial Accounting & Controlling)</li>
+          <li>ITIL 4 (Information Technology Infrastructure Library)</li>
           <li>PRINCE2 (Projects IN Controlled Environments)</li>
           <li>Exec-PGP, Financial Markets – NIFM, Ministry of Finance (India)</li>
         </ul>

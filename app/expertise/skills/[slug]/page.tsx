@@ -32,68 +32,86 @@ export default async function SkillDetailPage({ params }: Props) {
   const processedContent = await remark().use(html).process(content)
 
   return (
-    <main className="max-w-3xl mx-auto py-12 px-6 text-gray-800">
-      <h1 className="text-4xl font-bold mb-4">{data.title}</h1>
-      {data.thumbnail && (
-        <div className="relative w-full h-64 mb-6">
-          <Image
-            src={`/images/${data.thumbnail}`}
-            alt={data.title}
-            fill
-            className="rounded-md object-cover"
+    <>
+      <main className="max-w-5xl mx-auto py-20 px-4 grid gap-8 md:grid-cols-3 bg-gray-50 min-h-screen">
+        <div className="md:col-span-2">
+          <div className="text-center mb-8">
+            <h1 className="text-4xl font-bold text-blue-800">{data.title}</h1>
+            {data.thumbnail && (
+              <div className="relative w-full h-48 mt-4">
+                <Image
+                  src={`/images/${data.thumbnail}`}
+                  alt={data.title}
+                  fill
+                  className="rounded-md object-cover"
+                />
+              </div>
+            )}
+          </div>
+
+          <article
+            className="prose prose-base p-4 bg-white shadow-lg rounded-lg border border-gray-200 hover:bg-blue-50 transition duration-300"
+            dangerouslySetInnerHTML={{ __html: processedContent.toString() }}
           />
         </div>
-      )}
 
-      <article
-        className="prose prose-lg mb-12"
-        dangerouslySetInnerHTML={{ __html: processedContent.toString() }}
-      />
+        <aside className="space-y-6">
+          {data.relatedIndustries?.length > 0 && (
+            <div>
+              <h2 className="text-lg font-semibold mb-2 text-green-800">Related Industries</h2>
+              <div className="grid gap-2">
+                {data.relatedIndustries.map((industry: string) => (
+                  <Link key={industry} href={`/expertise/industry/${industry}`}>
+                    <div className="cursor-pointer bg-green-100 hover:bg-green-300 text-center py-3 rounded-lg shadow transition duration-300">
+                      🏭 {industryTitleMap[industry]}
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
 
-      {data.relatedIndustries && (
-        <section className="mb-8">
-          <h2 className="text-xl font-semibold mb-2">Related Industries</h2>
-          <div className="flex flex-wrap gap-3">
-            {data.relatedIndustries.map((industry: string) => (
-              <Link key={industry} href={`/expertise/industry/${industry}`}>
-                <button className="px-2 py-1 bg-gray-100 text-[10px] rounded hover:bg-blue-100">
-                  🏭 {industryTitleMap[industry]}
-                </button>
-              </Link>
-            ))}
-          </div>
-        </section>
-      )}
+          {data.relatedProjects?.length > 0 && (
+            <div>
+              <h2 className="text-lg font-semibold mb-2 text-yellow-800">Related Projects</h2>
+              <div className="grid gap-2">
+                {data.relatedProjects.map((project: string) => (
+                  <Link key={project} href={`/projects/${project}`}>
+                    <div className="cursor-pointer bg-yellow-100 hover:bg-yellow-300 text-center py-3 rounded-lg shadow transition duration-300">
+                      📁 {projectTitleMap[project]}
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
 
-      {data.relatedProjects && (
-        <section className="mb-8">
-          <h2 className="text-xl font-semibold mb-2">Related Projects</h2>
-          <div className="flex flex-wrap gap-3">
-            {data.relatedProjects.map((project: string) => (
-              <Link key={project} href={`/projects/${project}`}>
-                <button className="px-2 py-1 bg-gray-100 text-[10px] rounded hover:bg-blue-100">
-                  📁 {projectTitleMap[project]}
-                </button>
-              </Link>
-            ))}
-          </div>
-        </section>
-      )}
-
-      {data.relatedBlogs && (
-        <section className="mb-8">
-          <h2 className="text-xl font-semibold mb-2">Related Blogs</h2>
-          <div className="flex flex-wrap gap-3">
+        </aside>
+      </main>
+      {data.relatedBlogs?.length > 0 && (
+        <section className="max-w-5xl mx-auto mt-12 space-y-6 px-4">
+          <h2 className="text-lg font-semibold mb-2 text-purple-800">Related Blogs</h2>
+          <div className="grid gap-2">
             {data.relatedBlogs.map((blog: string) => (
               <Link key={blog} href={`/blog/${blog}`}>
-                <button className="px-2 py-1 bg-gray-100 text-[10px] rounded hover:bg-blue-100">
+                <div className="cursor-pointer bg-purple-100 hover:bg-purple-300 text-center py-3 rounded-lg shadow transition duration-300">
                   📝 {blogTitleMap[blog]}
-                </button>
+                </div>
               </Link>
             ))}
           </div>
         </section>
       )}
-    </main>
+    </>
   )
+}
+export async function generateStaticParams() {
+  const skillsDir = path.join(process.cwd(), 'content/skills');
+  const files = fs.readdirSync(skillsDir);
+
+  return files
+    .filter(file => file.endsWith('.md'))
+    .map(file => ({
+      slug: file.replace(/\.md$/, ''),
+    }));
 }

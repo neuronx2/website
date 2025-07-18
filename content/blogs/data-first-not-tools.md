@@ -2,7 +2,7 @@
 title: "Data First, Tools Later: A Lean Guide to Structuring Data in Early-Stage Startups"
 excerpt: "Get your data architecture right before investing in costly tools or platforms."
 thumbnail: "blogs/9.jpg"
-relatedSkills: ["data-analytics", "machine-learning"]
+relatedSkills: ["da", "ops", "strategy","ce","bi","fin","pm","prod"]
 relatedIndustries: ["ecommerce"]
 relatedProjects: ["clv-dashboard"]
 ---

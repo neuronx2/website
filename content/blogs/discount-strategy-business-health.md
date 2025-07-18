@@ -2,7 +2,7 @@
 title: "What Your Discount Strategy Says About Your Business Model"
 excerpt: "Decode the hidden signals in your pricing tactics and their long-term business impact..."
 thumbnail: "blogs/13.jpg"
-relatedSkills: ["data-analytics", "machine-learning"]
+relatedSkills: ["da", "ops", "strategy","ce","bi","fin","pm","prod"]
 relatedIndustries: ["ecommerce"]
 relatedProjects: ["clv-dashboard"]
 ---

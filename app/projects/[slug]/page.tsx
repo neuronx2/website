@@ -32,9 +32,9 @@ async function getRelated(folder: string, slugs: string[]): Promise<RelatedItem[
 export default async function ProjectPage({
   params,
 }: {
-  params: { slug: string } | Promise<{ slug: string }>
+  params: Promise<{ slug: string }>
 }) {
-  const awaitedParams = await Promise.resolve(params)
+  const awaitedParams = await params
   const slug = awaitedParams.slug
   const filePath = path.join(process.cwd(), 'content/projects', `${slug}.md`)
 

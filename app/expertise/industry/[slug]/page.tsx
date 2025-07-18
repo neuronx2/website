@@ -10,10 +10,10 @@ import Link from 'next/link'
 export default async function IndustryDetailPage({
   params,
 }: {
-  params: { slug: string } | Promise<{ slug: string }>
+  params: Promise<{ slug: string }>
 }) {
-  const awaitedParams = await Promise.resolve(params)
-  const slug = decodeURIComponent(awaitedParams.slug)
+  const resolvedParams = await params
+  const slug = decodeURIComponent(resolvedParams.slug)
 
   const filePath = path.join(process.cwd(), 'content/industries', `${slug}.md`)
   if (!fs.existsSync(filePath)) return notFound()
@@ -22,20 +22,19 @@ export default async function IndustryDetailPage({
   const { data, content } = matter(fileContent)
   const processed = await remark().use(html).process(content)
 
-  // Helper to get titles from .md files for related items
   const getTitles = (dir: string, slugs: string[]) => {
     return slugs.map((slug) => {
-      const filePath = path.join(process.cwd(), `content/${dir}`, `${slug}.md`);
-      if (!fs.existsSync(filePath)) return { slug, title: slug };
-      const file = fs.readFileSync(filePath, 'utf8');
-      const { data } = matter(file);
-      return { slug, title: data.title || slug };
-    });
-  };
+      const filePath = path.join(process.cwd(), `content/${dir}`, `${slug}.md`)
+      if (!fs.existsSync(filePath)) return { slug, title: slug }
+      const file = fs.readFileSync(filePath, 'utf8')
+      const { data } = matter(file)
+      return { slug, title: data.title || slug }
+    })
+  }
 
-  const skills = data.relatedSkills ? getTitles('skills', data.relatedSkills) : [];
-  const projects = data.relatedProjects ? getTitles('projects', data.relatedProjects) : [];
-  const blogs = data.relatedBlogs ? getTitles('blogs', data.relatedBlogs) : [];
+  const skills = data.relatedSkills ? getTitles('skills', data.relatedSkills) : []
+  const projects = data.relatedProjects ? getTitles('projects', data.relatedProjects) : []
+  const blogs = data.relatedBlogs ? getTitles('blogs', data.relatedBlogs) : []
 
   return (
     <>
@@ -113,12 +112,12 @@ export default async function IndustryDetailPage({
 }
 
 export async function generateStaticParams() {
-  const industriesDir = path.join(process.cwd(), 'content/industries');
-  const files = fs.readdirSync(industriesDir);
+  const industriesDir = path.join(process.cwd(), 'content/industries')
+  const files = fs.readdirSync(industriesDir)
 
   return files
-    .filter(file => file.endsWith('.md'))
-    .map(file => ({
+    .filter((file) => file.endsWith('.md'))
+    .map((file) => ({
       slug: file.replace(/\.md$/, ''),
-    }));
+    }))
 }

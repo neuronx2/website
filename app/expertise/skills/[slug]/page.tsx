@@ -10,9 +10,9 @@ import html from 'remark-html'
 export default async function SkillDetailPage({
   params,
 }: {
-  params: { slug: string } | Promise<{ slug: string }>
+  params: Promise<{ slug: string }>
 }) {
-  const awaitedParams = await Promise.resolve(params)
+  const awaitedParams = await params
   const slug = awaitedParams.slug
   const filePath = path.join(process.cwd(), 'content/skills', `${slug}.md`)
 

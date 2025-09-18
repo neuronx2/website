@@ -2,7 +2,7 @@
 title: "Legal Recovery Framework for Credit Card NPAs"
 excerpt: "Designed and launched a data-backed legal recovery system targeting credit card payment defaulters post-crisis."
 thumbnail: "projects/ccrecovery.png"
-relatedSkills: ["ops","strategy","pm"]
+relatedSkills: ["ops","strategy"]
 relatedIndustries: ["banking","marketing-research","entrepreneurship"]
 relatedBlogs: [
   "data-driven-expansion",

@@ -2,7 +2,7 @@
 title: "Enterprise Research Delivery & Analytics Dashboard for Client Performance Monitoring"
 excerpt: "Led a multi-country research program and built a real-time dashboard to track fieldwork performance and data quality for a global client."
 thumbnail: "projects/research-analytics-tool-thumb.png"
-relatedSkills: ["ops","prod","pm","bi"]
+relatedSkills: ["prod","pm","bi"]
 relatedIndustries: ["ecommerce","marketing-research"]
 
 ---

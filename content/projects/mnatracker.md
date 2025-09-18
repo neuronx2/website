@@ -2,7 +2,7 @@
 title: "M&A Tracker Development for Inorganic Expansion Strategy"
 excerpt: "Built a comprehensive M&A pipeline and evaluation framework to support inorganic expansion into new markets and technologies."
 thumbnail: "projects/mna-tracker-thumb.png"
-relatedSkills: ["ops","prod","strategy","pm"]
+relatedSkills: ["da","prod","strategy"]
 relatedIndustries: ["ecommerce","semiconductors","marketing-research","entrepreneurship"]
 relatedBlogs: [
   "cross-departmental-data-projects",

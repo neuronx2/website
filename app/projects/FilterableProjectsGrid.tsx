@@ -1,32 +1,40 @@
 "use client"
 
-import { useState, useMemo } from 'react'
+import { useMemo, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 
-export default function FilterableProjectsGrid({ projects }) {
-  if (!projects || !Array.isArray(projects)) return null
+type Project = {
+  slug: string
+  title: string
+  excerpt: string
+  thumbnail?: string
+  relatedSkills?: Array<{ slug: string; title: string }>
+}
 
+export default function FilterableProjectsGrid({ projects = [] }: { projects?: Project[] }) {
+  const normalizedProjects = useMemo(() => (Array.isArray(projects) ? projects : []), [projects])
   const [selectedSkill, setSelectedSkill] = useState('')
 
-  // Build list of unique skills with titles
   const allSkills = useMemo(() => {
-    const skillMap = new Map()
-    projects.forEach((p) => {
-      p.relatedSkills?.forEach((skill) => {
-        if (skill && skill.slug && skill.title) {
+    const skillMap = new Map<string, string>()
+    normalizedProjects.forEach((project) => {
+      project.relatedSkills?.forEach((skill) => {
+        if (skill?.slug && skill?.title) {
           skillMap.set(skill.slug, skill.title)
         }
       })
     })
     return Array.from(skillMap.entries()).sort((a, b) => a[1].localeCompare(b[1]))
-  }, [projects])
+  }, [normalizedProjects])
 
   const filteredProjects = selectedSkill
-    ? projects.filter((p) =>
-        p.relatedSkills?.some((skill) => skill.slug === selectedSkill)
+    ? normalizedProjects.filter((project) =>
+        project.relatedSkills?.some((skill) => skill.slug === selectedSkill),
       )
-    : projects
+    : normalizedProjects
+
+  if (normalizedProjects.length === 0) return null
 
   return (
     <div className="space-y-4 mt-6">
@@ -34,12 +42,14 @@ export default function FilterableProjectsGrid({ projects }) {
         <label className="block text-sm font-medium text-gray-700 mb-1">Filter by Skill</label>
         <select
           value={selectedSkill}
-          onChange={(e) => setSelectedSkill(e.target.value)}
+          onChange={(event) => setSelectedSkill(event.target.value)}
           className="border border-gray-300 rounded px-3 py-2 w-full max-w-xs"
         >
           <option value="">All Skills</option>
           {allSkills.map(([slug, title]) => (
-            <option key={slug} value={slug}>{title}</option>
+            <option key={slug} value={slug}>
+              {title}
+            </option>
           ))}
         </select>
       </div>

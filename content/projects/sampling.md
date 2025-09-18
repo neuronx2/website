@@ -2,7 +2,7 @@
 title: "High-Volume Marketing Research Execution & Insight Enablement"
 excerpt: "Delivered 600+ research projects including questionnaire design, sample execution, data QC, and client-ready insights across global B2B and B2C markets."
 thumbnail: "projects/research-execution-thumb.png"
-relatedSkills: ["ops","da","prod","strategy"]
+relatedSkills: ["da","strategy"]
 relatedIndustries: ["boutique-consultancy","ecommerce","marketing-research","entrepreneurship"]
 
 ---

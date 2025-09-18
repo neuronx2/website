@@ -1,31 +1,38 @@
-// app/expertise/page.tsx
-
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import Link from 'next/link'
 
-function getTitlesFromMarkdown(dirPath: string): string[] {
+type Entry = { slug: string; title: string }
+
+function getEntries(dirPath: string): Entry[] {
   const fullPath = path.join(process.cwd(), dirPath)
   const files = fs.readdirSync(fullPath)
 
-  return files.map((filename) => {
-    const filePath = path.join(fullPath, filename)
-    const fileContent = fs.readFileSync(filePath, 'utf8')
-    const { data } = matter(fileContent)
-    return data.title
-  }).filter(Boolean)
+  return files
+    .filter((filename) => filename.endsWith('.md'))
+    .map((filename) => {
+      const filePath = path.join(fullPath, filename)
+      const fileContent = fs.readFileSync(filePath, 'utf8')
+      const { data } = matter(fileContent)
+      return {
+        slug: filename.replace(/\.md$/, ''),
+        title: data.title,
+      }
+    })
+    .filter((entry) => Boolean(entry.title))
+    .sort((a, b) => a.title.localeCompare(b.title))
 }
 
 export default function ExpertisePage() {
-  const skills = getTitlesFromMarkdown('content/skills')
-  const industries = getTitlesFromMarkdown('content/industries')
+  const skills = getEntries('content/skills')
+  const industries = getEntries('content/industries')
 
   return (
     <section className="space-y-10 pt-20">
       <h1 className="text-4xl font-bold mb-6">🧠 Expertise</h1>
       <p className="text-lg text-gray-700 max-w-2xl">
-        <strong>It's all about data &amp; Bringing insights to the Management for Data facilitated decision making.</strong> 
+        <strong>It&rsquo;s all about data & Bringing insights to the Management for Data facilitated decision making.</strong>
       </p>
       <p className="text-lg text-gray-700 max-w-2xl">
         On this page, you can explore my areas of expertise—categorized by skillset and industry. From statistical modeling and analytics automation to operations design and innovation strategy, each project and capability here reflects how I use data to solve real business challenges across various functions.
@@ -37,8 +44,12 @@ export default function ExpertisePage() {
             <h2 className="text-2xl font-semibold mb-2 text-blue-600 hover:underline w-fit">By Skillsets 🛠️</h2>
           </Link>
           <ul className="list-disc list-inside text-gray-600 space-y-1">
-            {skills.map((title) => (
-              <li key={title}>{title}</li>
+            {skills.map(({ slug, title }) => (
+              <li key={slug}>
+                <Link href={`/expertise/skills/${slug}`} className="hover:text-blue-600 hover:underline transition-colors">
+                  {title}
+                </Link>
+              </li>
             ))}
           </ul>
         </div>
@@ -47,8 +58,12 @@ export default function ExpertisePage() {
             <h2 className="text-2xl font-semibold mb-2 text-blue-600 hover:underline w-fit">By Industry 🏭</h2>
           </Link>
           <ul className="list-disc list-inside text-gray-600 space-y-1">
-            {industries.map((title) => (
-              <li key={title}>{title}</li>
+            {industries.map(({ slug, title }) => (
+              <li key={slug}>
+                <Link href={`/expertise/industry/${slug}`} className="hover:text-blue-600 hover:underline transition-colors">
+                  {title}
+                </Link>
+              </li>
             ))}
           </ul>
         </div>

@@ -2,7 +2,7 @@
 title: "Cash Flow Analysis for Startup Financial Planning"
 excerpt: "Dashboards to visualize predicted lifetime value and track retention KPIs."
 thumbnail: "projects/cash_flow.jpg"
-relatedSkills: ["fin","da","strategy","pm"]
+relatedSkills: ["fin","da","strategy"]
 relatedIndustries: ["ecommerce","semiconductors","marketing-research"]
 relatedBlogs: [
   "finances-at-the-center",

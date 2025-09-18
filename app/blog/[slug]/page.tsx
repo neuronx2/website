@@ -5,6 +5,7 @@ import { remark } from 'remark'
 import html from 'remark-html'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
+import Image from 'next/image'
 
 type RelatedItem = {
   slug: string
@@ -12,8 +13,24 @@ type RelatedItem = {
   excerpt: string
 }
 
+const colorClasses = {
+  blue: 'border-blue-100 bg-blue-50 text-blue-700 hover:border-blue-200 hover:bg-blue-100',
+  green: 'border-green-100 bg-green-50 text-green-700 hover:border-green-200 hover:bg-green-100',
+  yellow: 'border-yellow-100 bg-yellow-50 text-yellow-700 hover:border-yellow-200 hover:bg-yellow-100',
+}
+
+const baseChip =
+  'flex w-full items-center gap-2 rounded-md border px-3 py-1.5 text-xs font-medium text-left transition-colors'
+
+const resolveImagePath = (thumbnail?: string) => {
+  if (!thumbnail) return ''
+  const trimmed = thumbnail.replace(/^\/+/, '')
+  if (trimmed.startsWith('images/')) return `/${trimmed}`
+  return `/images/${trimmed}`
+}
+
 async function getRelated(folder: string, slugs: string[]): Promise<RelatedItem[]> {
-  const items = await Promise.all(
+  const results = await Promise.all(
     slugs.map(async (slug) => {
       const filePath = path.join(process.cwd(), 'content', folder, `${slug}.md`)
       try {
@@ -29,23 +46,22 @@ async function getRelated(folder: string, slugs: string[]): Promise<RelatedItem[
       }
     })
   )
-  return items.filter(Boolean) as RelatedItem[]
+  return results.filter(Boolean) as RelatedItem[]
 }
 
 export async function generateStaticParams() {
   const blogDir = path.join(process.cwd(), 'content/blogs')
   const filenames = await fs.promises.readdir(blogDir)
+
   return filenames
     .filter((name) => name.endsWith('.md'))
     .map((name) => ({ slug: name.replace(/\.md$/, '') }))
 }
 
-export default async function BlogPostPage(
-  props: { params: Promise<{ slug: string }> } // Vercel-compatible
-) {
-  const { slug } = await props.params
-  const decoded = decodeURIComponent(slug)
-  const filePath = path.join(process.cwd(), 'content/blogs', `${decoded}.md`)
+export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
+  const awaitedParams = await params
+  const slug = decodeURIComponent(awaitedParams.slug)
+  const filePath = path.join(process.cwd(), 'content/blogs', `${slug}.md`)
 
   try {
     await fs.promises.access(filePath)
@@ -57,40 +73,89 @@ export default async function BlogPostPage(
   const { data, content } = matter(fileContent)
   const processed = await remark().use(html).process(content)
 
-  const relatedSkills = await getRelated('skills', data.relatedSkills || [])
-  const relatedIndustries = await getRelated('industries', data.relatedIndustries || [])
-  const relatedProjects = await getRelated('projects', data.relatedProjects || [])
+  const [relatedSkills, relatedIndustries, relatedProjects] = await Promise.all([
+    getRelated('skills', data.relatedSkills || []),
+    getRelated('industries', data.relatedIndustries || []),
+    getRelated('projects', data.relatedProjects || []),
+  ])
 
   return (
-    <main className="max-w-2xl mx-auto py-8 px-4 text-gray-800 bg-gray-50 min-h-screen">
+    <main className="max-w-5xl mx-auto py-12 px-6 text-gray-800">
       <h1 className="text-4xl font-bold mb-4">{data.title}</h1>
       <p className="text-sm text-gray-500 mb-6">{data.date}</p>
-      <article
-        className="prose prose-base max-w-none mb-6 bg-white shadow-lg rounded-lg p-6 border border-gray-200 hover:shadow-xl transition duration-300"
-        dangerouslySetInnerHTML={{ __html: processed.toString() }}
-      />
-      <div className="flex flex-wrap gap-4 mb-6">
-        {relatedSkills.map((item) => (
-          <Link key={item.slug} href={`/expertise/skills/${item.slug}`}>
-            <button className="px-4 py-2 bg-blue-100 text-blue-700 rounded hover:bg-blue-200">
-              {item.title}
-            </button>
-          </Link>
-        ))}
-        {relatedIndustries.map((item) => (
-          <Link key={item.slug} href={`/expertise/industry/${item.slug}`}>
-            <button className="px-4 py-2 bg-green-100 text-green-700 rounded hover:bg-green-200">
-              {item.title}
-            </button>
-          </Link>
-        ))}
-        {relatedProjects.map((item) => (
-          <Link key={item.slug} href={`/projects/${item.slug}`}>
-            <button className="px-4 py-2 bg-yellow-100 text-yellow-700 rounded hover:bg-yellow-200">
-              {item.title}
-            </button>
-          </Link>
-        ))}
+      <div className="mb-10 flex flex-col gap-8 md:flex-row">
+        <div className="flex-1 space-y-6 md:pr-8">
+          <article
+            className="prose prose-lg max-w-none"
+            dangerouslySetInnerHTML={{ __html: processed.toString() }}
+          />
+        </div>
+        <aside className="w-full max-w-xs space-y-6 md:w-64">
+          {data.thumbnail && (
+            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-lg border">
+              <Image
+                src={resolveImagePath(data.thumbnail)}
+                alt={data.title}
+                fill
+                className="object-cover"
+              />
+            </div>
+          )}
+
+          {relatedSkills.length > 0 && (
+            <div>
+              <h2 className="text-sm font-semibold uppercase tracking-wide text-blue-700">🧠 Related Skillsets</h2>
+              <div className="mt-2 flex flex-col gap-2">
+                {relatedSkills.map((item) => (
+                  <Link
+                    key={item.slug}
+                    href={`/expertise/skills/${item.slug}`}
+                    className={`${baseChip} ${colorClasses.blue}`}
+                  >
+                    <span role="img" aria-hidden="true">🧠</span>
+                    <span className="flex-1 truncate">{item.title}</span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {relatedIndustries.length > 0 && (
+            <div>
+              <h2 className="text-sm font-semibold uppercase tracking-wide text-green-700">🏭 Related Industries</h2>
+              <div className="mt-2 flex flex-col gap-2">
+                {relatedIndustries.map((item) => (
+                  <Link
+                    key={item.slug}
+                    href={`/expertise/industry/${item.slug}`}
+                    className={`${baseChip} ${colorClasses.green}`}
+                  >
+                    <span role="img" aria-hidden="true">🏭</span>
+                    <span className="flex-1 truncate">{item.title}</span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {relatedProjects.length > 0 && (
+            <div>
+              <h2 className="text-sm font-semibold uppercase tracking-wide text-yellow-700">📁 Related Projects</h2>
+              <div className="mt-2 flex flex-col gap-2">
+                {relatedProjects.map((item) => (
+                  <Link
+                    key={item.slug}
+                    href={`/projects/${item.slug}`}
+                    className={`${baseChip} ${colorClasses.yellow}`}
+                  >
+                    <span role="img" aria-hidden="true">📁</span>
+                    <span className="flex-1 truncate">{item.title}</span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+        </aside>
       </div>
     </main>
   )

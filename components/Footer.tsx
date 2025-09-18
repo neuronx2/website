@@ -1,12 +1,30 @@
+'use client'
+
+import { useRouter } from 'next/navigation'
+
 export default function Footer() {
+  const router = useRouter()
+
   return (
-    <footer className="fixed bottom-0 left-0 w-full border-t bg-white py-2 px-4 flex justify-between items-center text-xs text-gray-500 z-50 shadow-inner">
-      <span>© {new Date().getFullYear()} Neuron χ²</span>
-      <div className="flex gap-2">
-        <a href="/blog" className="px-2 py-1 border rounded hover:bg-gray-100">Blogs</a>
-        <a href="/expertise/skills" className="px-2 py-1 border rounded hover:bg-gray-100">Skills</a>
-        <a href="/expertise/industry" className="px-2 py-1 border rounded hover:bg-gray-100">Industry</a>
-        <a href="/projects" className="px-2 py-1 border rounded hover:bg-gray-100">Projects</a>
+    <footer className="fixed bottom-0 left-0 w-full border-t bg-white/90 backdrop-blur shadow-inner">
+      <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-2 text-xs text-gray-500 sm:px-6">
+        <span>© 2025 Neuron χ² - Made with Data, AI & Coffee ☕</span>
+        <div className="flex items-center gap-2">
+          <button
+            type="button"
+            onClick={() => router.back()}
+            className="rounded border border-gray-300 px-2 py-1 text-gray-600 transition-colors hover:border-blue-500 hover:text-blue-600"
+          >
+            ← Back
+          </button>
+          <button
+            type="button"
+            onClick={() => router.forward?.()}
+            className="rounded border border-gray-300 px-2 py-1 text-gray-600 transition-colors hover:border-blue-500 hover:text-blue-600"
+          >
+            Forward →
+          </button>
+        </div>
       </div>
     </footer>
   )

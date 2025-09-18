@@ -74,14 +74,24 @@ export default function ContactPage() {
           </li>
           <li>
             📄 Resume:{' '}
-            <a
-              href="https://drive.google.com/uc?export=download&id=113RKISycrcdouqu3VXi2DCSh8foPU8As"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-600 underline"
-            >
-              Download PDF
-            </a>
+            <div className="mt-2 flex flex-wrap gap-2">
+              <a
+                href="/cv/Kush_CV_EN.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-3 py-1 text-sm border border-blue-600 text-blue-600 rounded hover:bg-blue-50 transition"
+              >
+                CV in English
+              </a>
+              <a
+                href="/cv/Kush_CV_DE.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-3 py-1 text-sm border border-blue-600 text-blue-600 rounded hover:bg-blue-50 transition"
+              >
+                CV in German
+              </a>
+            </div>
           </li>
         </ul>
       </div>

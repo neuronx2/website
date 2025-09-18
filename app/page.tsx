@@ -8,7 +8,7 @@ export default function HomePage() {
       </h1>
 
       <p className="text-lg text-gray-700 leading-relaxed text-justify">
-        My name is Kushagra, you can read more about me on <strong>"About"</strong> page.
+        My name is Kushagra, you can read more about me on <strong>&quot;About&quot;</strong> page.
       </p>
 
       <p className="text-lg text-gray-700 leading-relaxed text-justify">
@@ -19,15 +19,15 @@ export default function HomePage() {
       </p>
 
       <p className="text-lg text-gray-700 leading-relaxed text-justify">
-        With <strong>“Expertise”</strong> & <strong>“Projects”</strong> pages you can easily navigate between skills (Related Skills grouped together), industry & projects that are related to one another to have a comprehensive overview of my competence in a given domain.
+        With <strong>&ldquo;Expertise&rdquo;</strong> & <strong>&ldquo;Projects&rdquo;</strong> pages you can easily navigate between skills (Related Skills grouped together), industry & projects that are related to one another to have a comprehensive overview of my competence in a given domain.
       </p>
 
       <p className="text-lg text-gray-700 leading-relaxed text-justify">
-        <strong>“Projects”</strong> & <strong>“Blogs”</strong> can be filtered based on Skillset Groups.
+        <strong>&ldquo;Projects&rdquo;</strong> & <strong>&ldquo;Blogs&rdquo;</strong> can be filtered based on Skillset Groups.
       </p>
 
       <p className="text-lg text-gray-700 leading-relaxed text-justify">
-        For further questions or contact please visit the <strong>“Contact”</strong> page. Any feedback or input is deeply welcome and appreciated.
+        For further questions or contact please visit the <strong>&ldquo;Contact&rdquo;</strong> page. Any feedback or input is deeply welcome and appreciated.
       </p>
 
       <div className="flex flex-wrap justify-center gap-4 pt-6">

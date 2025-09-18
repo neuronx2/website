@@ -7,13 +7,20 @@ import html from 'remark-html'
 import Image from 'next/image'
 import Link from 'next/link'
 
-export default async function IndustryDetailPage({
-  params,
-}: {
+const colorClasses = {
+  blue: 'border-blue-100 bg-blue-50 text-blue-700 hover:border-blue-200 hover:bg-blue-100',
+  yellow: 'border-yellow-100 bg-yellow-50 text-yellow-700 hover:border-yellow-200 hover:bg-yellow-100',
+}
+
+const baseChip = 'flex w-full items-center gap-2 rounded-md border px-3 py-1.5 text-xs font-medium text-left transition-colors'
+
+type Props = {
   params: Promise<{ slug: string }>
-}) {
-  const resolvedParams = await params
-  const slug = decodeURIComponent(resolvedParams.slug)
+}
+
+export default async function IndustryDetailPage({ params }: Props) {
+  const awaitedParams = await params
+  const slug = decodeURIComponent(awaitedParams.slug)
 
   const filePath = path.join(process.cwd(), 'content/industries', `${slug}.md`)
   if (!fs.existsSync(filePath)) return notFound()
@@ -22,54 +29,48 @@ export default async function IndustryDetailPage({
   const { data, content } = matter(fileContent)
   const processed = await remark().use(html).process(content)
 
-  const getTitles = (dir: string, slugs: string[]) => {
-    return slugs.map((slug) => {
-      const filePath = path.join(process.cwd(), `content/${dir}`, `${slug}.md`)
-      if (!fs.existsSync(filePath)) return { slug, title: slug }
-      const file = fs.readFileSync(filePath, 'utf8')
-      const { data } = matter(file)
-      return { slug, title: data.title || slug }
-    })
-  }
+  const getTitles = (dir: string, slugs: string[]) =>
+    slugs
+      .map((entry) => {
+        const entryPath = path.join(process.cwd(), `content/${dir}`, `${entry}.md`)
+        if (!fs.existsSync(entryPath)) return { slug: entry, title: entry }
+        const entryContent = fs.readFileSync(entryPath, 'utf8')
+        const { data } = matter(entryContent)
+        return { slug: entry, title: data.title || entry }
+      })
 
   const skills = data.relatedSkills ? getTitles('skills', data.relatedSkills) : []
   const projects = data.relatedProjects ? getTitles('projects', data.relatedProjects) : []
-  const blogs = data.relatedBlogs ? getTitles('blogs', data.relatedBlogs) : []
 
   return (
-    <>
-      <main className="max-w-5xl mx-auto py-20 px-4 grid gap-8 md:grid-cols-3 bg-gray-50 min-h-screen">
-        <div className="md:col-span-2">
-          <div className="text-center mb-8">
-            <h1 className="text-4xl font-bold text-blue-800">{data.title}</h1>
-            {data.thumbnail && (
-              <div className="relative w-full h-48 mt-4">
-                <Image
-                  src={`/images/${data.thumbnail}`}
-                  alt={data.title}
-                  fill
-                  className="rounded-md object-cover"
-                />
-              </div>
-            )}
-          </div>
+    <main className="max-w-5xl mx-auto py-12 px-6 text-gray-800">
+      <h1 className="text-4xl font-bold mb-4">{data.title}</h1>
+      <div className="mb-10 flex flex-col gap-8 md:flex-row">
+        <article className="prose prose-lg flex-1 md:pr-8" dangerouslySetInnerHTML={{ __html: processed.toString() }} />
+        <aside className="w-full max-w-xs space-y-6 md:w-64">
+          {data.thumbnail && (
+            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-lg border">
+              <Image
+                src={`/images/${data.thumbnail}`}
+                alt={data.title}
+                fill
+                className="object-cover"
+              />
+            </div>
+          )}
 
-          <article
-            className="prose prose-base p-4 bg-white shadow-lg rounded-lg border border-gray-200 hover:bg-blue-50 transition duration-300"
-            dangerouslySetInnerHTML={{ __html: processed.toString() }}
-          />
-        </div>
-
-        <aside className="space-y-6">
           {skills.length > 0 && (
             <div>
-              <h2 className="text-lg font-semibold mb-2 text-green-800">Related Skillsets</h2>
-              <div className="grid gap-2">
+              <h3 className="text-sm font-semibold uppercase tracking-wide text-blue-700">🧠 Related Skillsets</h3>
+              <div className="mt-2 flex flex-col gap-2">
                 {skills.map(({ slug, title }) => (
-                  <Link key={slug} href={`/expertise/skills/${slug}`}>
-                    <div className="cursor-pointer bg-green-100 hover:bg-green-300 text-center py-3 rounded-lg shadow transition duration-300">
-                      🧠 {title}
-                    </div>
+                  <Link
+                    key={slug}
+                    href={`/expertise/skills/${slug}`}
+                    className={`${baseChip} ${colorClasses.blue}`}
+                  >
+                    <span role="img" aria-hidden="true">🧠</span>
+                    <span className="flex-1 truncate">{title}</span>
                   </Link>
                 ))}
               </div>
@@ -78,36 +79,24 @@ export default async function IndustryDetailPage({
 
           {projects.length > 0 && (
             <div>
-              <h2 className="text-lg font-semibold mb-2 text-yellow-800">Related Projects</h2>
-              <div className="grid gap-2">
+              <h3 className="text-sm font-semibold uppercase tracking-wide text-yellow-700">📁 Related Projects</h3>
+              <div className="mt-2 flex flex-col gap-2">
                 {projects.map(({ slug, title }) => (
-                  <Link key={slug} href={`/projects/${slug}`}>
-                    <div className="cursor-pointer bg-yellow-100 hover:bg-yellow-300 text-center py-3 rounded-lg shadow transition duration-300">
-                      📁 {title}
-                    </div>
+                  <Link
+                    key={slug}
+                    href={`/projects/${slug}`}
+                    className={`${baseChip} ${colorClasses.yellow}`}
+                  >
+                    <span role="img" aria-hidden="true">📁</span>
+                    <span className="flex-1 truncate">{title}</span>
                   </Link>
                 ))}
               </div>
             </div>
           )}
         </aside>
-      </main>
-
-      {blogs.length > 0 && (
-        <section className="max-w-5xl mx-auto mt-12 space-y-6 px-4">
-          <h2 className="text-lg font-semibold mb-2 text-purple-800">Related Blogs</h2>
-          <div className="grid gap-2">
-            {blogs.map(({ slug, title }) => (
-              <Link key={slug} href={`/blog/${slug}`}>
-                <div className="cursor-pointer bg-purple-100 hover:bg-purple-300 text-center py-3 rounded-lg shadow transition duration-300">
-                  📝 {title}
-                </div>
-              </Link>
-            ))}
-          </div>
-        </section>
-      )}
-    </>
+      </div>
+    </main>
   )
 }
 

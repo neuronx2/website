@@ -1,4 +1,4 @@
-// app/about/page.tsx
+import Link from 'next/link'
 
 export default function AboutPage() {
   return (
@@ -12,32 +12,42 @@ export default function AboutPage() {
       </p>
 
       <div className="flex flex-wrap gap-4 pt-4">
-        <a
+        <Link
           href="/projects"
           className="inline-block px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition"
         >
           View Projects
-        </a>
-        <a
+        </Link>
+        <Link
           href="/expertise"
           className="inline-block px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition"
         >
           Expertise Overview
-        </a>
-        <a
+        </Link>
+        <Link
           href="/contact"
           className="inline-block px-4 py-2 border border-blue-600 text-blue-600 rounded-md hover:bg-blue-50 transition"
         >
           Contact Me
-        </a>
-        <a
-          href="https://drive.google.com/uc?export=download&id=113RKISycrcdouqu3VXi2DCSh8foPU8As"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block px-4 py-2 text-sm underline text-blue-500 hover:text-blue-700"
-        >
-          Download Resume →
-        </a>
+        </Link>
+        <div className="flex flex-wrap gap-2 items-center justify-center">
+          <a
+            href="/cv/Kush_CV_EN.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-4 py-2 border border-blue-600 text-blue-600 rounded-md hover:bg-blue-50 transition text-center"
+          >
+            CV in English
+          </a>
+          <a
+            href="/cv/Kush_CV_DE.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-4 py-2 border border-blue-600 text-blue-600 rounded-md hover:bg-blue-50 transition text-center"
+          >
+            CV in German
+          </a>
+        </div>
       </div>
 
       <div className="pt-10 space-y-4 max-w-3xl">
@@ -54,7 +64,7 @@ export default function AboutPage() {
           <li><strong>2020–2022:</strong> Senior Marketing BI Finance Analyst, HelloFresh – bridging financial, marketing, and BI domains.</li>
           <li><strong>2019–2020:</strong> Data Analysis Consultant (Intern), Ommax – advising SMEs post-masters on digital analytics.</li>
           <li><strong>2015–2018:</strong> Business Analytics Manager, Toluna – led analytics for COO, focused on operations and client delivery.</li>
-          <li><strong>2012–2015:</strong>  Project Manager & Senior Financial Analyst, FP&A, Dynata – earlier managed market research project delivery & then moved to CFO's team for financial reporting and sales insights.</li>
+          <li><strong>2012–2015:</strong>  Project Manager & Senior Financial Analyst, FP&A, Dynata – earlier managed market research project delivery & then moved to CFO&rsquo;s team for financial reporting and sales insights.</li>
           <li><strong>2010–2012:</strong> Associate, Nehra & Associates – advised corporates on debt restructuring and diversification.</li>
           <li><strong>2008–2010:</strong> Assistant Manager, GE Capital – progressed from analytics to Regional Head, AR & Collections.</li>
         </ul>
@@ -81,7 +91,7 @@ export default function AboutPage() {
         <ul className="list-disc pl-5 space-y-1">
           <li>Tutored students aged 12 to 15 in math and science—an early taste of mentoring that still continious today.</li>
           <li>2nd place at Paris La Défense Smart City Hackathon – using clustering for public infra planning.</li>
-          <li>Winner of L'Oréal Innovation Challenge 2019 – improved first-time visitor conversions.</li>
+          <li>Winner of L&rsquo;Oréal Innovation Challenge 2019 – improved first-time visitor conversions.</li>
           <li>Captained both the football and badminton teams in college, and also played competitive volleyball. Sports remain a big part of my life—I still play regularly to this day.</li>
           <li>During undergrad years, served as both Treasurer and later President of the Biomedical Society, helping organize seminars, research discussions, and community events.</li>
           <li>Was consistently on the scholar’s list throughout school, earned the Scholar’s Badge from 1998 to 2001 for academic and extracurricular excellence.</li>

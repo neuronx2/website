@@ -2,7 +2,7 @@
 title: "Investor Awareness Book Editing: Stock Market Education for Indian Investors"
 excerpt: "Edited and standardized investor education material covering equities, derivatives, mutual funds, and commodities for a SEBI-aligned financial literacy initiative."
 thumbnail: "projects/investor-awareness-thumb.png"
-relatedSkills: ["fin","ce","pm"]
+relatedSkills: ["fin","ce"]
 relatedIndustries: ["public-sector","banking","entrepreneurship"]
 
 ---

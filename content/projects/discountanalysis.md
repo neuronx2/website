@@ -2,7 +2,7 @@
 title: "Discount Analytics & Campaign Optimization"
 excerpt: "A data-driven framework to test, evaluate, and optimize discount campaigns using dashboards and budgeting simulations."
 thumbnail: "projects/discount_analytics.png"
-relatedSkills: ["fin","da","ce","pm"]
+relatedSkills: ["fin","da","ce"]
 relatedIndustries: ["boutique-consultancy","ecommerce","marketing-research"]
 relatedBlogs: [
   "discount-strategy-business-health",

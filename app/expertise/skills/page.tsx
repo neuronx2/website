@@ -43,10 +43,10 @@ export default function SkillsPage() {
     <main className="max-w-6xl mx-auto px-6 py-12">
       <h1 className="text-4xl font-bold mb-8 text-gray-800">🧠 Skills</h1>
       <p className="text-md text-gray-600 mb-6">
-        For sake of ease and user friendliness, individual skills, understanding of tools, methods &amp; frameworks are clubbed under umbrella descriptions. eg. Dashboarding, Reporting, Forecasting (marketing) are covered under &quot;Data Analyics, Data Science &amp; Machine Learning&quot;. Similarly: Discount Cash Flow (DCF) or anything to do with M&amp;A, can be found under &quot;Financial Planning, Modeling &amp; Scenario Analysis&quot;.
+        For sake of ease and user friendliness, individual skills, understanding of tools, methods & frameworks are clubbed under umbrella descriptions. eg. Dashboarding, Reporting, Forecasting (marketing) are covered under &quot;Data Analyics, Data Science & Machine Learning&quot;. Similarly: Discount Cash Flow (DCF) or anything to do with M&A, can be found under &quot;Financial Planning, Modeling & Scenario Analysis&quot;.
       </p>
       <p className="text-md text-gray-600 mb-6">
-        <strong>Associated KPI's, Tools &amp; Methods are also seen in the quick descriptions below:</strong>
+        <strong>Associated KPI&rsquo;s, Tools & Methods are also seen in the quick descriptions below:</strong>
       </p>
       <ul className="flex flex-col gap-4 mt-6">
         {skills.map((skill) => (

@@ -2,7 +2,7 @@
 title: "Commodity Warehousing and Digital Integration Project"
 excerpt: "Winning and implementing a government warehousing project under the PEG scheme with full business unit setup."
 thumbnail: "projects/warehouse.png"
-relatedSkills: ["fin","strategy","pm"]
+relatedSkills: ["fin","strategy","ops"]
 relatedIndustries: ["public-sector","boutique-consultancy","entrepreneurship"]
 relatedBlogs: [
   "data-driven-expansion",

@@ -2,7 +2,7 @@
 title: "Experimentation: Increasing signups through A/B Tests"
 excerpt: "Applied experimentation methods like A/B testing to optimize user engagement, conversion funnels, and campaign effectiveness across marketing touchpoints."
 thumbnail: "projects/abtesting.jpg"
-relatedSkills: ["da","ce","strategy","pm"]
+relatedSkills: ["da","ce","strategy"]
 relatedIndustries: ["boutique-consultancy","ecommerce","marketing-research"]
 relatedBlogs: [
   "experimentation"

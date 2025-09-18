@@ -2,7 +2,7 @@
 title: "Research Contribution to DNA Vaccine Development for Prostate Cancer"
 excerpt: "Supported Dr. G.P. Talwar’s lab in developing a DNA-based therapeutic vaccine for prostate cancer through molecular biology and tissue culture techniques."
 thumbnail: "projects/dna-vaccine-thumb.png"
-relatedSkills: ["ops","prod","pm"]
+relatedSkills: ["ops","prod"]
 relatedIndustries: ["public-sector","healthcare-life-sciences"]
 
 ---

@@ -8,7 +8,11 @@ export default function HomePage() {
       </h1>
 
       <p className="text-lg text-gray-700 leading-relaxed text-justify">
-        My name is Kushagra, you can read more about me on <strong>&quot;About&quot;</strong> page.
+        My name is Kushagra, you can read more about me on{' '}
+        <Link href="/about" className="text-blue-600 hover:underline">
+          <strong>&quot;About&quot;</strong>
+        </Link>{' '}
+        page.
       </p>
 
       <p className="text-lg text-gray-700 leading-relaxed text-justify">
@@ -19,15 +23,34 @@ export default function HomePage() {
       </p>
 
       <p className="text-lg text-gray-700 leading-relaxed text-justify">
-        With <strong>&ldquo;Expertise&rdquo;</strong> & <strong>&ldquo;Projects&rdquo;</strong> pages you can easily navigate between skills (Related Skills grouped together), industry & projects that are related to one another to have a comprehensive overview of my competence in a given domain.
+        With{' '}
+        <Link href="/expertise" className="text-blue-600 hover:underline">
+          <strong>&ldquo;Expertise&rdquo;</strong>
+        </Link>{' '}
+        &{' '}
+        <Link href="/projects" className="text-blue-600 hover:underline">
+          <strong>&ldquo;Projects&rdquo;</strong>
+        </Link>{' '}
+        pages you can easily navigate between skills (Related Skills grouped together), industry & projects that are related to one another to have a comprehensive overview of my competence in a given domain.
       </p>
 
       <p className="text-lg text-gray-700 leading-relaxed text-justify">
-        <strong>&ldquo;Projects&rdquo;</strong> & <strong>&ldquo;Blogs&rdquo;</strong> can be filtered based on Skillset Groups.
+        <Link href="/projects" className="text-blue-600 hover:underline">
+          <strong>&ldquo;Projects&rdquo;</strong>
+        </Link>{' '}
+        &{' '}
+        <Link href="/blog" className="text-blue-600 hover:underline">
+          <strong>&ldquo;Blogs&rdquo;</strong>
+        </Link>{' '}
+        can be filtered based on Skillset Groups.
       </p>
 
       <p className="text-lg text-gray-700 leading-relaxed text-justify">
-        For further questions or contact please visit the <strong>&ldquo;Contact&rdquo;</strong> page. Any feedback or input is deeply welcome and appreciated.
+        For further questions or contact please visit the{' '}
+        <Link href="/contact" className="text-blue-600 hover:underline">
+          <strong>&ldquo;Contact&rdquo;</strong>
+        </Link>{' '}
+        page. Any feedback or input is deeply welcome and appreciated.
       </p>
 
       <div className="flex flex-wrap justify-center gap-4 pt-6">

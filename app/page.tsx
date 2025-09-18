@@ -8,15 +8,22 @@ export default function HomePage() {
       </h1>
 
       <p className="text-lg text-gray-700 leading-relaxed text-justify">
+        My name is Kushagra, you can read more about me on <strong>"About"</strong> page.
+      </p>
+
+      <p className="text-lg text-gray-700 leading-relaxed text-justify">
+        <strong>Website Structure:</strong>
+        <br />
+        <br />
         On this website, you can easily explore my work across <strong>Industries</strong>, <strong>Business Functions</strong>, <strong>Projects</strong>, and also read some <strong>Blogs</strong>.
       </p>
 
       <p className="text-lg text-gray-700 leading-relaxed text-justify">
-        On the <strong>“About”</strong> page you will find information about my professional experience, qualifications, languages & certifications.
+        With <strong>“Expertise”</strong> & <strong>“Projects”</strong> pages you can easily navigate between skills (Related Skills grouped together), industry & projects that are related to one another to have a comprehensive overview of my competence in a given domain.
       </p>
 
       <p className="text-lg text-gray-700 leading-relaxed text-justify">
-        With <strong>“Expertise”</strong> & <strong>“Projects”</strong> pages you can easily navigate between skills, industry & projects that are related to one another to have a comprehensive overview of my competence in a given domain.
+        <strong>“Projects”</strong> & <strong>“Blogs”</strong> can be filtered based on Skillset Groups.
       </p>
 
       <p className="text-lg text-gray-700 leading-relaxed text-justify">

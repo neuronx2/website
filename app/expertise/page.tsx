@@ -32,10 +32,10 @@ export default function ExpertisePage() {
     <section className="space-y-10 pt-20">
       <h1 className="text-4xl font-bold mb-6">🧠 Expertise</h1>
       <p className="text-lg text-gray-700 max-w-2xl">
-        <strong>It&rsquo;s all about data & Bringing insights to the Management for Data facilitated decision making.</strong>
+        <strong>It is all about Data & Bringing insights to the Management for Data facilitated decision making.</strong>
       </p>
       <p className="text-lg text-gray-700 max-w-2xl">
-        On this page, you can explore my areas of expertise—categorized by skillset and industry. From statistical modeling and analytics automation to operations design and innovation strategy, each project and capability here reflects how I use data to solve real business challenges across various functions.
+        From <strong>early stages</strong> of my Career where I acted as a <strong>Data Producer</strong> (Primary Research), to the <strong>mid stages</strong> where I took the insights to C-Suite as <strong>Data Presenter</strong> (Business Analyst) & now, to <strong>Data Consumer</strong> (Using Data to make decision and at times for seeking approvals from C-suite & Board Members). Data has been at the Core of my career progression. Thus, making me capable of understanding the <strong>Big Picture</strong> while being aware of the Hands on Challenges that Data teams face & the support that management needs to embark onto data backed decision making process.
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6">
